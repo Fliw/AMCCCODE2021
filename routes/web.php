@@ -22,5 +22,6 @@ Route::prefix('team')->group(function () {
 
     Route::middleware('auth.team:web')->prefix('dashboard')->group(function () {
         Route::get('/', 'Web\Frontend\Team\Dashboard\HomeController@index')->name('team.dashboard');
+        Route::get('/newsfeeds', 'Web\Frontend\Team\Dashboard\NewsfeedController@index')->name('newsfeeds.index');
     });
 });
