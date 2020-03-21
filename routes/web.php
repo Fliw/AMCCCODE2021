@@ -24,5 +24,6 @@ Route::prefix('team')->group(function () {
         Route::get('/', 'Web\Frontend\Team\Dashboard\HomeController@index')->name('team.dashboard');
         Route::get('/newsfeeds', 'Web\Frontend\Team\Dashboard\NewsfeedController@index')->name('newsfeeds.index');
         Route::get('/schedules', 'Web\Frontend\Team\Dashboard\ScheduleController@index')->name('schedules.index');
+        Route::resource('/quests', 'Web\Frontend\Team\Dashboard\QuestController')->only(['index', 'show', 'update']);
     });
 });
