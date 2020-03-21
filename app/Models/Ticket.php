@@ -11,4 +11,9 @@ class Ticket extends Model
     protected $casts = [
         'buyable' => 'boolean'
     ];
+
+    public function getPriceAttribute($value)
+    {
+        return 'Rp' . number_format($value, 2, ',', '.');
+    }
 }

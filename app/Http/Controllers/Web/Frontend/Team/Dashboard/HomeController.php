@@ -16,7 +16,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['session'] = Auth::user()->load('team', 'team.category');
+        $data['session'] = Auth::user()->loadMissing([
+            'paymentsUnpaid',
+            'paymentsUnpaid.ticket',
+            'paymentsUnpaid.method',
+            'team',
+            'team.category'
+        ])->toArray();
         
         $data['helpdesks'] = Helpdesk::all()->sortBy('type');
         
