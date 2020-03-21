@@ -23,6 +23,7 @@ Route::prefix('team')->group(function () {
     Route::middleware('auth.team:web')->prefix('dashboard')->group(function () {
         Route::get('/', 'Web\Frontend\Team\Dashboard\HomeController@index')->name('team.dashboard');
         Route::get('/newsfeeds', 'Web\Frontend\Team\Dashboard\NewsfeedController@index')->name('newsfeeds.index');
+        Route::get('/payments', 'Web\Frontend\Team\Dashboard\PaymentController@index')->name('payments.index');
         Route::get('/schedules', 'Web\Frontend\Team\Dashboard\ScheduleController@index')->name('schedules.index');
         Route::resource('/quests', 'Web\Frontend\Team\Dashboard\QuestController')->only(['index', 'show', 'update']);
     });

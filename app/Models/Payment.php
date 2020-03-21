@@ -16,6 +16,24 @@ class Payment extends Model
         'due'
     ];
 
+    protected $appends = [
+        'status'
+    ];
+
+    public function getStatusAttribute()
+    {
+        if ($this->paid) {
+            return ['element' => 'success', 'message' => 'Lunas'];
+        } else {
+            return ['element' => 'warning', 'message' => 'Menunggu Pembayaran'];
+        }
+    }
+
+    public function getAmountAttribute($value)
+    {
+        return 'Rp' . number_format($value, 2, ',', '.');
+    }
+
     public function attendee()
     {
         return $this->belongsTo('App\Models\Attendee');
@@ -24,5 +42,10 @@ class Payment extends Model
     public function method()
     {
         return $this->belongsTo('App\Models\PaymentMethod');
+    }
+
+    public function ticket()
+    {
+        return $this->belongsTo('App\Models\Ticket');
     }
 }

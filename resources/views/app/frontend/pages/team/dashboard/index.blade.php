@@ -11,20 +11,41 @@
     <div class="section-body">
       <div class="row">
         <div class="col-sm-12 col-md-6">
+
+          <h2 class="section-title" style="margin-top: 0">Menunggu Pembayaran</h2>
+          <p class="section-lead">Segera selesaikan administrasi agar keikutsertaan kamu lancar ya..</p>
+          <div class="card">
+            <div class="card-body">
+              <ul class="list-group">
+                @foreach ($data['session']['payments_unpaid'] as $payment)
+                  <a href="{{ route('payments.index') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <span><strong>{{ $payment['ticket']['name'] }}</strong> <br/>
+                      <strong>Jumlah: </strong> {{ $payment['ticket']['price'] }} <br/>
+                      {{ $payment['method']['name'] }} ({{ $payment['method']['number'] }} a.n. {{ $payment['method']['holder'] }})</strong><br/>
+                    </span> 
+                    <span class="badge badge-warning badge-pill">
+                      Menunggu
+                    </span>
+                  </a>
+                @endforeach
+              </ul>
+            </div>
+          </div>
+
           <h2 class="section-title" style="margin-top: 0">Tim Saya</h2>
           <p class="section-lead">Informasi Tim Kamu</p>
           <div class="card">
             <div class="card-body">
               <table>
-                <tr>
+                <tr style="vertical-align: top">
                   <td width="100"><strong>Nama</strong></td>
                   <td>{{ $data['session']['team']['name'] }}</td>
                 </tr>
-                <tr>
+                <tr style="vertical-align: top">
                   <td><strong>Kategori</strong></td>
                   <td>{{ $data['session']['team']['category']['name'] }}</td>
                 </tr>
-                <tr>
+                <tr style="vertical-align: top">
                   <td><strong>Ketua</strong></td>
                   <td>{{ $data['session']['name'] }} ({{ $data['session']['identity'] }})</td>
                 </tr>
@@ -47,7 +68,7 @@
               <ul class="list-group">
                 @foreach ($data['quests'] as $quest)
                   <a href="{{ route('quests.show', ['quest' => $quest['id'] ]) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <span>{{ $quest['title'] }} &mdash; <small>{{ $quest['date_diff'] }}</small></span> 
+                    <span>{{ $quest['title'] }} <br/>&mdash; <small>{{ $quest['date_diff'] }}</small></span> 
                     <span class="badge badge-{{ $quest['state']['element'] }} badge-pill">
                       {{ $quest['state']['message'] }}
                     </span>
@@ -77,22 +98,6 @@
                   </a>
                 @endforeach
               </ul>
-              
-              {{-- <ul>
-              @foreach ($data['helpdesks'] as $helpdesk)
-              
-                <li>
-                  {{ $helpdesk['name'] }} - 
-
-                  <a @if($helpdesk['is_available']) href="{{ $helpdesk['target'] }}" @endif
-                    type="button"
-                    class="btn btn-sm btn-{{ $helpdesk['status']['element'] }}"
-                    data-toggle="tooltip" data-placement="top" title="{{ $helpdesk['help_pretty'] }}">
-                    {{ $helpdesk['status']['message'] }}
-                  </a>
-                </li>
-              @endforeach
-              </ul> --}}
             </div>
           </div>
 

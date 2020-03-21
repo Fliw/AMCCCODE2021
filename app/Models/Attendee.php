@@ -26,6 +26,11 @@ class Attendee extends Authenticatable
         return $this->hasMany('App\Models\Payment');
     }
 
+    public function paymentsUnpaid()
+    {
+        return $this->hasMany('App\Models\Payment')->wherePaid(false);
+    }
+
     public function team()
     {
         return $this->hasOne('App\Models\Team', 'leader_id');

@@ -17,6 +17,7 @@ class CreatePaymentMethodsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('number')->nullable();
+            $table->string('holder')->nullable();
             $table->boolean('usable')->default(false);
             $table->timestamps();
         });
