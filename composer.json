@@ -1,9 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "hizzely/amcc-event",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "An app to help managing AMCC event participants. Crafted with competition-type event in mind.",
     "keywords": [
-        "framework",
+        "amcc",
+        "event",
+        "code",
         "laravel"
     ],
     "license": "MIT",
@@ -18,7 +20,8 @@
         "fzaninotto/faker": "^1.9.1",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
-        "phpunit/phpunit": "^8.0"
+        "phpunit/phpunit": "^8.0",
+        "poteto-dev/laravel-ui-stisla": "^0.1.4"
     },
     "config": {
         "optimize-autoloader": true,
