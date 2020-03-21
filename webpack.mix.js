@@ -14,5 +14,17 @@ require('laravel-mix-purgecss');
 
 mix.sass('resources/sass/app.scss', 'public/css')
     .js('resources/js/app.js', 'public/js').extract()
-    .purgeCss();
+    .purgeCss({
+        whitelistPatterns: [
+            /default$/,
+            /primary$/,
+            /secondary$/,
+            /info$/,
+            /warning$/,
+            /success$/,
+            /danger$/,
+            /arrow/,
+            /tooltip/,
+        ],
+    });
 mix.version();
