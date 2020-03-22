@@ -16,4 +16,11 @@ class Ticket extends Model
     {
         return 'Rp' . number_format($value, 2, ',', '.');
     }
+
+    public function events()
+    {
+        return $this->belongsToMany('App\Models\Event')
+                    ->as('access')
+                    ->withTimestamps();
+    }
 }
