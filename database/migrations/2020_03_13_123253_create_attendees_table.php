@@ -20,7 +20,7 @@ class CreateAttendeesTable extends Migration
             $table->string('institution')->nullable();
             $table->string('email')->unique();
             $table->string('whatsapp');
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
