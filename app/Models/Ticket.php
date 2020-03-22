@@ -12,9 +12,18 @@ class Ticket extends Model
         'buyable' => 'boolean'
     ];
 
+    protected $appends = [
+        'is_available'
+    ];
+
     public function getPriceAttribute($value)
     {
         return 'Rp' . number_format($value, 2, ',', '.');
+    }
+
+    public function getIsAvailableAttribute()
+    {
+        return ($this->buyable && $this->stock > 0);
     }
 
     public function events()
