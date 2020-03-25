@@ -17,7 +17,7 @@ class ScheduleController extends Controller
     public function index()
     {
         $data['session'] = Auth::user()->load('team');
-        $data['schedules'] = Schedule::all();
+        $data['schedules'] = Schedule::with('event')->get()->toArray();
         
         return view('app.frontend.pages.team.schedules.index', compact('data'));
     }

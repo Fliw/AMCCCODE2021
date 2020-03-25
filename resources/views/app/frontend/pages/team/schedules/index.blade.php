@@ -34,7 +34,7 @@
                   @foreach ($data['schedules'] as $schedule)
                     <tr>
                       <td>{{ $loop->iteration }}</td>
-                      <td>{{ $schedule['name'] }}</td>
+                      <td>{{ $schedule['event']['name'] }}</td>
                       <td>{{ $schedule['venue'] }}</td>
                       <td>{{ $schedule['from'] }}</td>
                       <td>{{ $schedule['to'] }}</td>
