@@ -13,6 +13,13 @@
 
 Route::get('/', 'Web\Frontend\HomeController@landing')->name('home.landing');
 
+Route::prefix('tickets')->group(function () {
+    Route::get('/', 'Web\Frontend\TicketController@index')->name('ticket.index');
+    Route::post('/', 'Web\Frontend\TicketController@order')->name('ticket.order');
+    Route::get('/done', 'Web\Frontend\TicketController@done')->name('ticket.done');
+    Route::get('/{ticket}', 'Web\Frontend\TicketController@form')->name('ticket.form');
+});
+
 Route::prefix('team')->group(function () {
     Route::get('/login', 'Web\Frontend\Team\LoginController@index')->name('team.login');
     Route::post('/login', 'Web\Frontend\Team\LoginController@authenticate')->name('team.login.authenticate');
