@@ -30,4 +30,12 @@ class Newsfeed extends Model
     {
         $this->attributes['channel'] = implode(',', $value);
     }
+
+    public function scopeTeam($query)
+    {
+        return $query->where([
+            ['published', 1],
+            ['channel', 'like', '%team%']
+        ]);
+    }
 }

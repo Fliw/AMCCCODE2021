@@ -39,4 +39,9 @@ class Quest extends Model
                 return ['element' => 'default', 'message' => 'No Status'];
         }
     }
+
+    public function scopeOpen($query)
+    {
+        return $query->where('status', 'issued');
+    }
 }
