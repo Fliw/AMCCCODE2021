@@ -21,7 +21,11 @@ class AttendeeService
         $attendee->institution = $data['institution'];
         $attendee->email = $data['email'];
         $attendee->whatsapp = $data['whatsapp'];
-        $attendee->password = Hash::make($data['password']);
+
+        if (array_key_exists('password', $data)) {
+            $attendee->password = Hash::make($data['password']);
+        }
+
         $attendee->save();
 
         $this->attendee = $attendee;
@@ -31,17 +35,14 @@ class AttendeeService
 
     public function buyTicket(array $data)
     {
-        $ticket = Ticket::find($data['ticket_id'])->first();
+        $ticket = Ticket::findOrFail($data['ticket_id']);
+        $amount = filter_var($ticket->price, FILTER_SANITIZE_NUMBER_INT);
         
-        if (!$ticket || !$attendee) {
-            return false;
-        }
-
         $payment = new Payment;
         $payment->attendee_id = $this->attendee->id;
         $payment->ticket_id = $data['ticket_id'];
         $payment->method_id = $data['method_id'];
-        $payment->amount = $ticket->price ?? 0;
+        $payment->amount = $amount ?? 0;
         $payment->due = now()->addDays(7);
         $payment->save();
 

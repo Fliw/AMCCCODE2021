@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data['session'] = Auth::user()->loadMissing([
+        $data['session'] = Auth::user()->load([
             'paymentsUnpaid',
             'paymentsUnpaid.ticket',
             'paymentsUnpaid.method',
@@ -25,16 +25,10 @@ class HomeController extends Controller
         ])->toArray();
         
         $data['helpdesks'] = Helpdesk::all()->sortBy('type');
-        
-        $data['newsfeed'] = Newsfeed::where([
-            ['channel', 'like', '%team%'],
-            ['published', 1]
-        ])->orderByDesc('created_at')->first();
-        
-        $data['quests'] = Quest::where([
-            ['team_id', $data['session']['team']['id']],
-            ['status', 'issued']
-        ])->orderByDesc('created_at')->get();
+        $data['newsfeed'] = Newsfeed::team()->latest()->first();
+        $data['quests'] = Quest::open()->whereTeamId(
+            $data['session']['team']['id']
+        )->latest()->get();
         
         return view('app.frontend.pages.team.dashboard.index', compact('data'));
     }

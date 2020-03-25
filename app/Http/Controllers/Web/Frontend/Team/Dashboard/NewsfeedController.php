@@ -17,11 +17,7 @@ class NewsfeedController extends Controller
     public function index()
     {
         $data['session'] = Auth::user()->load('team');
-        
-        $data['newsfeeds'] = Newsfeed::where([
-            ['published', 1],
-            ['channel', 'like', '%team%']
-        ])->orderByDesc('created_at')->get();
+        $data['newsfeeds'] = Newsfeed::team()->latest()->get();
 
         return view('app.frontend.pages.team.newsfeeds.index', compact('data'));
     }
