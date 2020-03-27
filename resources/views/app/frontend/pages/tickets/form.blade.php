@@ -47,23 +47,38 @@
                     <div class="col-sm-12 col-md-6">
                       <div class="form-group">
                         <label>Nomor Identitas (NIM, NIS, dsb.)</label>
-                        <input type="text" name="attendee[identity]" class="form-control" placeholder="Ketik nomor identitas">
+                        <input type="text" name="attendee[identity]" class="form-control @if($errors->has('attendee.identity')) is-invalid @endif" placeholder="Ketik nomor identitas" value="{{ old('attendee.identity') }}" required>
+                        <div class="invalid-feedback">
+                          {{ $errors->first('attendee.identity') }}
+                        </div>
                       </div>
                       <div class="form-group">
                         <label>Nama Lengkap</label>
-                        <input type="text" name="attendee[name]" class="form-control" placeholder="Ketik nama lengkap">
+                        <input type="text" name="attendee[name]" class="form-control @if($errors->has('attendee.name')) is-invalid @endif" placeholder="Ketik nama lengkap" value="{{ old('attendee.name') }}" required>
+                        <div class="invalid-feedback">
+                          {{ $errors->first('attendee.name') }}
+                        </div>
                       </div>
                       <div class="form-group">
                         <label>Asal Instansi</label>
-                        <input type="text" name="attendee[institution]" class="form-control" placeholder="Ketik perguruan tinggi atau instansi asal">
+                        <input type="text" name="attendee[institution]" class="form-control @if($errors->has('attendee.institution')) is-invalid @endif" placeholder="Ketik perguruan tinggi atau instansi asal" value="{{ old('attendee.institution') }}" required>
+                        <div class="invalid-feedback">
+                          {{ $errors->first('attendee.institution') }}
+                        </div>
                       </div>
                       <div class="form-group">
                         <label>Email</label>
-                        <input type="email" name="attendee[email]" class="form-control" placeholder="Ketik alamat email aktif dan valid">
+                        <input type="email" name="attendee[email]" class="form-control @if($errors->has('attendee.email')) is-invalid @endif" placeholder="Ketik alamat email aktif dan valid" value="{{ old('attendee.email') }}" required>
+                        <div class="invalid-feedback">
+                          {{ $errors->first('attendee.email') }}
+                        </div>
                       </div>
                       <div class="form-group">
                         <label>Nomor WhatsApp</label>
-                        <input type="text" name="attendee[whatsapp]" class="form-control" placeholder="Ketik nomor WhatsApp aktif">
+                        <input type="text" name="attendee[whatsapp]" class="form-control @if($errors->has('attendee.whatsapp')) is-invalid @endif" placeholder="Ketik nomor WhatsApp aktif" value="{{ old('attendee.whatsapp') }}" required>
+                        <div class="invalid-feedback">
+                          {{ $errors->first('attendee.whatsapp') }}
+                        </div>
                       </div>
                     </div>
                     <div class="col-sm-12 col-md-6">
@@ -78,7 +93,7 @@
                       <hr>
                       <h6>Metode Pembayaran</h6>
                       @foreach ($data['payment_methods'] as $method)
-                        <input type="radio" id="method-{{ $loop->iteration }}" name="order[method_id]" value="{{ $method['id'] }}">
+                        <input type="radio" id="method-{{ $loop->iteration }}" name="order[method_id]" value="{{ $method['id'] }}" required>
                         <label for="method-{{ $loop->iteration }}">{{ $method['name'] }}</label>
                         <br>
                       @endforeach

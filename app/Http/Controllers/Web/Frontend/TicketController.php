@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use App\Http\Requests\Web\Frontend\TicketOrderRequest;
 use App\Models\Ticket;
 use App\Models\PaymentMethod;
 use App\Services\AttendeeService;
@@ -36,11 +37,12 @@ class TicketController extends Controller
         return view('app.frontend.pages.tickets.form', compact('data'));
     }
 
-    public function order(Request $request)
+    public function order(TicketOrderRequest $request)
     {
+        $data = $request->validated();
         $attendee = new AttendeeService;
-        $attendee->register($request->attendee);
-        $order = $attendee->buyTicket($request->order);
+        $attendee->register($data['attendee']);
+        $order = $attendee->buyTicket($data['order']);
 
         return redirect()->route('ticket.done')->with('order-placed', $order);
     }
