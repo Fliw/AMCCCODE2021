@@ -47,35 +47,35 @@
                     <div class="col-sm-12 col-md-6">
                       <div class="form-group">
                         <label>Nomor Identitas (NIM, NIS, dsb.)</label>
-                        <input type="text" name="attendee[identity]" class="form-control @if($errors->has('attendee.identity')) is-invalid @endif" placeholder="Ketik nomor identitas" value="{{ old('attendee.identity') }}" required>
+                        <input type="text" name="attendee[identity]" class="form-control @error('attendee.identity') is-invalid @enderror" placeholder="Ketik nomor identitas" value="{{ old('attendee.identity') }}" required>
                         <div class="invalid-feedback">
                           {{ $errors->first('attendee.identity') }}
                         </div>
                       </div>
                       <div class="form-group">
                         <label>Nama Lengkap</label>
-                        <input type="text" name="attendee[name]" class="form-control @if($errors->has('attendee.name')) is-invalid @endif" placeholder="Ketik nama lengkap" value="{{ old('attendee.name') }}" required>
+                        <input type="text" name="attendee[name]" class="form-control @error('attendee.name') is-invalid @enderror" placeholder="Ketik nama lengkap" value="{{ old('attendee.name') }}" required>
                         <div class="invalid-feedback">
                           {{ $errors->first('attendee.name') }}
                         </div>
                       </div>
                       <div class="form-group">
                         <label>Asal Instansi</label>
-                        <input type="text" name="attendee[institution]" class="form-control @if($errors->has('attendee.institution')) is-invalid @endif" placeholder="Ketik perguruan tinggi atau instansi asal" value="{{ old('attendee.institution') }}" required>
+                        <input type="text" name="attendee[institution]" class="form-control @error('attendee.institution') is-invalid @enderror" placeholder="Ketik perguruan tinggi atau instansi asal" value="{{ old('attendee.institution') }}" required>
                         <div class="invalid-feedback">
                           {{ $errors->first('attendee.institution') }}
                         </div>
                       </div>
                       <div class="form-group">
                         <label>Email</label>
-                        <input type="email" name="attendee[email]" class="form-control @if($errors->has('attendee.email')) is-invalid @endif" placeholder="Ketik alamat email aktif dan valid" value="{{ old('attendee.email') }}" required>
+                        <input type="email" name="attendee[email]" class="form-control @error('attendee.email') is-invalid @enderror" placeholder="Ketik alamat email aktif dan valid" value="{{ old('attendee.email') }}" required>
                         <div class="invalid-feedback">
                           {{ $errors->first('attendee.email') }}
                         </div>
                       </div>
                       <div class="form-group">
                         <label>Nomor WhatsApp</label>
-                        <input type="text" name="attendee[whatsapp]" class="form-control @if($errors->has('attendee.whatsapp')) is-invalid @endif" placeholder="Ketik nomor WhatsApp aktif" value="{{ old('attendee.whatsapp') }}" required>
+                        <input type="text" name="attendee[whatsapp]" class="form-control @error('attendee.whatsapp') is-invalid @enderror" placeholder="Ketik nomor WhatsApp aktif" value="{{ old('attendee.whatsapp') }}" required>
                         <div class="invalid-feedback">
                           {{ $errors->first('attendee.whatsapp') }}
                         </div>
@@ -89,7 +89,6 @@
                           <td style="text-align:right"><strong>{{ $data['ticket']['price'] }}</strong></td>
                         </tr>
                       </table>
-
                       <hr>
                       <h6>Metode Pembayaran</h6>
                       @foreach ($data['payment_methods'] as $method)
@@ -97,7 +96,6 @@
                         <label for="method-{{ $loop->iteration }}">{{ $method['name'] }}</label>
                         <br>
                       @endforeach
-
                       <hr>
                       <div class="form-group text-right">
                         <button type="submit" class="btn btn-primary">Beli E-Ticket</button>
