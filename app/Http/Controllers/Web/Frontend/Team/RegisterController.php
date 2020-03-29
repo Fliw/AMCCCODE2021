@@ -10,6 +10,12 @@ use App\Services\TeamService;
 
 class RegisterController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest:admin');
+        $this->middleware('guest:team');
+    }
+
     public function index()
     {
         $data['categories'] = CompetitionCategory::get(['id', 'name']);

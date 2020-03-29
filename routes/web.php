@@ -13,6 +13,18 @@
 
 Route::get('/', 'Web\Frontend\HomeController@landing')->name('home.landing');
 
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::namespace('Web\Admin\Auth')->group(function () {
+        Route::get('/login', 'LoginController@index')->name('login');
+        Route::post('/login', 'LoginController@authenticate')->name('auth');
+        Route::get('/logout', 'LoginController@logout')->name('logout');
+    });
+    
+    Route::middleware('auth:admin')->namespace('Web\Admin\Dashboard')->group(function () {
+        Route::get('/', 'HomeController@index')->name('dashboard');
+    });
+});
+
 Route::prefix('tickets')->group(function () {
     Route::get('/', 'Web\Frontend\TicketController@index')->name('ticket.index');
     Route::post('/', 'Web\Frontend\TicketController@order')->name('ticket.order');
@@ -27,7 +39,7 @@ Route::prefix('team')->group(function () {
     Route::get('/register', 'Web\Frontend\Team\RegisterController@index')->name('team.register');
     Route::post('/register', 'Web\Frontend\Team\RegisterController@store')->name('team.register.store');
 
-    Route::middleware('auth.team:web')->prefix('dashboard')->group(function () {
+    Route::middleware('auth:team')->prefix('dashboard')->group(function () {
         Route::get('/', 'Web\Frontend\Team\Dashboard\HomeController@index')->name('team.dashboard');
         Route::get('/newsfeeds', 'Web\Frontend\Team\Dashboard\NewsfeedController@index')->name('newsfeeds.index');
         Route::get('/payments', 'Web\Frontend\Team\Dashboard\PaymentController@index')->name('payments.index');
