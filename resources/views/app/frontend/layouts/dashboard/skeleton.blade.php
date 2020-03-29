@@ -8,14 +8,14 @@
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
   @stack('stylesheet')
 </head>
-
 <body>
-<div id="app">
-  @yield('app')
-</div>
-<script src="{{ mix('js/manifest.js') }}"></script>
-<script src="{{ mix('js/vendor.js') }}"></script>
-<script src="{{ mix('js/app.js') }}"></script>
-@stack('javascript')
+  <div id="app">
+    @yield('app')
+  </div>
+  
+  <script src="{{ mix('js/manifest.js') }}"></script>
+  <script src="{{ mix('js/vendor.js') }}"></script>
+  <script src="{{ mix('js/app.js') }}"></script>
+  @stack('javascript')
 </body>
 </html>

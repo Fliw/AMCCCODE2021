@@ -1,4 +1,4 @@
-@extends('app.frontend.layouts.content')
+@extends('app.frontend.layouts.dashboard.app')
 
 @section('title', 'Newsfeed')
 

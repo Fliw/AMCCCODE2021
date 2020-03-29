@@ -1,4 +1,4 @@
-@extends('app.frontend.layouts.skeleton')
+@extends('app.frontend.layouts.dashboard.skeleton')
 
 @section('app')
   <div class="main-wrapper main-wrapper-1">
