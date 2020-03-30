@@ -11,8 +11,11 @@
 |
 */
 
-Route::get('/', 'Web\Frontend\HomeController@landing')->name('home.landing');
-
+/*
+ * ---------------------------------------------------------------------------------------
+ * Admin Routes
+ * ---------------------------------------------------------------------------------------
+*/
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::namespace('Web\Admin\Auth')->group(function () {
         Route::get('/login', 'LoginController@index')->name('login');
@@ -22,8 +25,16 @@ Route::prefix('admin')->name('admin.')->group(function () {
     
     Route::middleware('auth:admin')->namespace('Web\Admin\Dashboard')->group(function () {
         Route::get('/', 'HomeController@index')->name('dashboard');
+        Route::resource('/newsfeeds', 'NewsfeedController')->except('create', 'show');
     });
 });
+
+/*
+ * ---------------------------------------------------------------------------------------
+ * Frontend Routes
+ * ---------------------------------------------------------------------------------------
+*/
+Route::get('/', 'Web\Frontend\HomeController@landing')->name('home.landing');
 
 Route::prefix('tickets')->group(function () {
     Route::get('/', 'Web\Frontend\TicketController@index')->name('ticket.index');
