@@ -17,7 +17,9 @@ class Payment extends Model
     ];
 
     protected $appends = [
-        'status'
+        'status',
+        'due_short',
+        'updated_short'
     ];
 
     public function getStatusAttribute()
@@ -29,9 +31,19 @@ class Payment extends Model
         }
     }
 
+    public function getDueShortAttribute()
+    {
+        return $this->due->format('d M, H:i');
+    }
+
+    public function getUpdatedShortAttribute()
+    {
+        return $this->updated_at->format('d M, H:i');
+    }
+
     public function getAmountAttribute($value)
     {
-        return 'Rp' . number_format($value, 2, ',', '.');
+        return 'Rp' . number_format($value, 0, ',', '.');
     }
 
     public function attendee()

@@ -26,6 +26,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware('auth:admin')->namespace('Web\Admin\Dashboard')->group(function () {
         Route::get('/', 'HomeController@index')->name('dashboard');
         Route::resource('/newsfeeds', 'NewsfeedController')->except('create', 'show');
+        Route::resource('/payments', 'PaymentController')->only('index', 'update');
     });
 });
 
