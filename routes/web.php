@@ -27,6 +27,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', 'HomeController@index')->name('dashboard');
         Route::resource('/newsfeeds', 'NewsfeedController')->except('create', 'show');
         Route::resource('/payments', 'PaymentController')->only('index', 'update');
+        Route::resource('/schedules', 'ScheduleController')->except('create', 'show');
     });
 });
 
@@ -45,6 +46,7 @@ Route::prefix('tickets')->group(function () {
 });
 
 Route::prefix('team')->group(function () {
+    Route::redirect('/', '/team/dashboard', 301);
     Route::get('/login', 'Web\Frontend\Team\LoginController@index')->name('team.login');
     Route::post('/login', 'Web\Frontend\Team\LoginController@authenticate')->name('team.login.authenticate');
     Route::get('/logout', 'Web\Frontend\Team\LoginController@logout')->name('team.logout');
