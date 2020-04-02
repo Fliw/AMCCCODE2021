@@ -14,5 +14,6 @@
     <li class="{{ request()->is('admin/quests') ? 'active' : '' }}"><a href="{{ route('admin.quests.index') }}"><i class="fas fa-exclamation-triangle"></i> <span>Quests</span></a></li>
     <li class="menu-header">Admin</li>
     <li class="{{ request()->is('admin/accounts') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.accounts.index') }}"><i class="fas fa-user"></i> <span>Accounts</span></a></li>
+    <li class="{{ request()->is('admin/configs') ? 'active' : '' }}"><a href="{{ route('admin.configs.index') }}"><i class="fas fa-cogs"></i> <span>Configurations</span></a></li>
   </ul>
 </aside>

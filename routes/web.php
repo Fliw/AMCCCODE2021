@@ -30,6 +30,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('/schedules', 'ScheduleController')->except('create', 'show');
         Route::resource('/quests', 'QuestController')->except('create', 'show');
         Route::resource('/accounts', 'AccountController')->only('index', 'store', 'destroy');
+        Route::resource('/configs', 'ConfigurationController')->except('create', 'show');
     });
 });
 
