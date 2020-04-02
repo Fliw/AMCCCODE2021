@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Quest extends Model
 {
@@ -11,7 +12,9 @@ class Quest extends Model
     protected $appends = [
         'date_diff',
         'is_open',
-        'state'
+        'state',
+        'short_note',
+        'short_date'
     ];
 
     public function getDateDiffAttribute()
@@ -40,8 +43,23 @@ class Quest extends Model
         }
     }
 
+    public function getShortNoteAttribute()
+    {
+        return Str::limit($this->reviewer_note, 50);
+    }
+
+    public function getShortDateAttribute()
+    {
+        return $this->created_at->format('d M, H:i');
+    }
+
     public function scopeOpen($query)
     {
         return $query->where('status', 'issued');
+    }
+
+    public function team()
+    {
+        return $this->belongsTo('App\Models\Team');
     }
 }

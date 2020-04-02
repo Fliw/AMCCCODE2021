@@ -80,23 +80,23 @@
 /* 3.7 Tooltip */
 @import "override/tooltip";
 /* 3.8 Modal */
-// @import "override/modal";
+@import "override/modal";
 /* 3.9 Nav */
 @import "override/nav";
 /* 3.10 Pagination */
-// @import "override/pagination";
+@import "override/pagination";
 /* 3.11 Badge */
 @import "override/badge";
 /* 3.12 Button */
 @import "override/button";
 /* 3.13 Media */
-// @import "override/media";
+@import "override/media";
 /* 3.14 Breadcrumb */
-// @import "override/breadcrumb";
+@import "override/breadcrumb";
 /* 3.15 Accordion */
-// @import "override/accordion";
+@import "override/accordion";
 /* 3.16 Popover */
-// @import "override/popover";
+@import "override/popover";
 /* 3.17 Grid */
 @import "override/grid";
 /* 3.18 Navbar */
@@ -106,13 +106,11 @@
 /* 3.20 Dropdown */
 @import "override/tab";
 /* 3.21 Progress Bar */
-// @import "override/progressbar";
+@import "override/progressbar";
 /* 3.22 Jumbotron */
-// @import "override/jumbotron";
+@import "override/jumbotron";
 /* 3.23 Carousel */
-// @import "override/carousel";
-
-@import "components/activities";
+@import "override/carousel";
 
 /* 4. Theme Style */
 /* 4.1 Misc */
@@ -125,3 +123,5 @@
 @import "theme/layout";
 /* 4.5 Animation */
 @import "theme/animation";
+
+@import "components";

@@ -14,7 +14,9 @@ class Schedule extends Model
     ];
 
     protected $appends = [
-        'status'
+        'status',
+        'from_short',
+        'to_short'
     ];
 
     public function getStatusAttribute()
@@ -30,6 +32,16 @@ class Schedule extends Model
         } else if ($now->greaterThan($finish)) {
             return ['element' => 'secondary', 'message' => 'Done'];
         }
+    }
+
+    public function getFromShortAttribute()
+    {
+        return $this->from->format('d M, H:i');
+    }
+
+    public function getToShortAttribute()
+    {
+        return $this->to->format('d M, H:i');
     }
 
     public function presences()
