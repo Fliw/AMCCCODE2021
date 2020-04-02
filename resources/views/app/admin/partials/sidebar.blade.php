@@ -12,5 +12,7 @@
     <li class="{{ request()->is('admin/payments') ? 'active' : '' }}"><a href="{{ route('admin.payments.index') }}"><i class="fas fa-dollar-sign"></i> <span>Payments</span></a></li>
     <li class="{{ request()->is('admin/schedules') ? 'active' : '' }}"><a href="{{ route('admin.schedules.index') }}"><i class="fas fa-calendar"></i> <span>Schedules</span></a></li>
     <li class="{{ request()->is('admin/quests') ? 'active' : '' }}"><a href="{{ route('admin.quests.index') }}"><i class="fas fa-exclamation-triangle"></i> <span>Quests</span></a></li>
+    <li class="menu-header">Admin</li>
+    <li class="{{ request()->is('admin/accounts') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.accounts.index') }}"><i class="fas fa-user"></i> <span>Accounts</span></a></li>
   </ul>
 </aside>

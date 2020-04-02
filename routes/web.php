@@ -29,6 +29,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('/payments', 'PaymentController')->only('index', 'update');
         Route::resource('/schedules', 'ScheduleController')->except('create', 'show');
         Route::resource('/quests', 'QuestController')->except('create', 'show');
+        Route::resource('/accounts', 'AccountController')->only('index', 'store', 'destroy');
     });
 });
 
