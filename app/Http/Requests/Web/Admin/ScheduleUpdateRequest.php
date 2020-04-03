@@ -13,11 +13,7 @@ class ScheduleUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        if (auth()->guard('admin')->check()) {
-            return true;
-        }
-
-        return false;
+        return auth()->guard('admin')->check();
     }
 
     /**
