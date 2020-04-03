@@ -10,11 +10,11 @@ use App\Models\Newsfeed;
 class NewsfeedController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Handle the incoming request.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __invoke()
     {
         $data['session'] = Auth::user()->load('team');
         $data['newsfeeds'] = Newsfeed::team()->latest()->get();

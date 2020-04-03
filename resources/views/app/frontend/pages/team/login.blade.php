@@ -24,7 +24,7 @@
             @endif
 
             <div class="card card-primary">
-              <form class="needs-validation" action="{{ route('team.login.authenticate') }}" method="POST">
+              <form class="needs-validation" action="{{ route('team.auth') }}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">

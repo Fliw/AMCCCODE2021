@@ -12,15 +12,16 @@ use App\Models\Quest;
 class HomeController extends Controller
 {
     /**
-     * Show team dashboard page
+     * Handle the incoming request.
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __invoke()
     {
         $data['session'] = Auth::user()->load([
             'paymentsUnpaid',
             'paymentsUnpaid.ticket',
             'paymentsUnpaid.method',
-            'team',
             'team.category'
         ])->toArray();
         

@@ -38,7 +38,7 @@
           @endif
 
           <div class="card">
-            <form action="{{ route('quests.update', ['quest' => $data['quest']['id']]) }}" method="POST">
+            <form action="{{ route('team.quests.update', ['quest' => $data['quest']['id']]) }}" method="POST">
               @csrf
               @method('patch')
               <div class="card-body">
@@ -51,6 +51,7 @@
                   @if($data['quest']['is_open'])
                   <br/>
                   <div class="text-right">
+                    <input type="hidden" name="status" value="submitted">
                     <button type="submit" class="btn btn-primary">Kirim Respon</button>
                   </div>
                   @endif

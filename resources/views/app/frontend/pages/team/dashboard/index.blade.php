@@ -18,7 +18,7 @@
             <div class="card-body">
               <ul class="list-group">
                 @foreach ($data['session']['payments_unpaid'] as $payment)
-                  <a href="{{ route('payments.index') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                  <a href="{{ route('team.payments') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                     <span><strong>{{ $payment['ticket']['name'] }}</strong> <br/>
                       <strong>Jumlah: </strong> {{ $payment['ticket']['price'] }} <br/>
                       {{ $payment['method']['name'] }} ({{ $payment['method']['number'] }} a.n. {{ $payment['method']['holder'] }})</strong><br/>
