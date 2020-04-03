@@ -34,15 +34,7 @@ class ScheduleController extends Controller
      */
     public function store(CreateRequest $request)
     {
-        $data = $request->validated();
-        
-        $schedule = new Schedule;
-        $schedule->event_id = $data['event_id'];
-        $schedule->venue = $data['venue'];
-        $schedule->capacity = $data['capacity'];
-        $schedule->from = Carbon::parse($data['from']);
-        $schedule->to = Carbon::parse($data['to']);
-        $schedule->save();
+        Schedule::create($request->validated());
 
         return redirect()->route('admin.schedules.index')->with('status', [
             'element' => 'success',
@@ -74,13 +66,7 @@ class ScheduleController extends Controller
      */
     public function update(UpdateRequest $request, Schedule $schedule)
     {
-        $data = $request->validated();
-        
-        $schedule->venue = $data['venue'];
-        $schedule->capacity = $data['capacity'];
-        $schedule->from = Carbon::parse($data['from']);
-        $schedule->to = Carbon::parse($data['to']);
-        $schedule->save();
+        $schedule->update($request->validated());
 
         return redirect()->route('admin.schedules.index')->with('status', [
             'element' => 'success',
