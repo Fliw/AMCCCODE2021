@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Web\Frontend\Team\Dashboard;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Web\Frontend\QuestUpdateRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Quest;
 
@@ -28,19 +28,16 @@ class QuestController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Quest $quest
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Quest $quest)
     {
         $data['session'] = Auth::user()->load('team');
-        $data['quest'] = Quest::firstWhere([
-            ['id', $id],
-            ['team_id', $data['session']['team']['id']]
-        ]);
+        $data['quest'] = $quest;
         
-        if (empty($data['quest'])) {
-            return redirect()->back();
+        if ($quest->team_id != $data['session']['team']['id']) {
+            return redirect()->route('team.quests.index');
         }
         
         return view('app.frontend.pages.team.quests.show', compact('data'));
@@ -49,16 +46,13 @@ class QuestController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\Web\Frontend\QuestUpdateRequest  $request
+     * @param  \App\Models\Quest $quest
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(QuestUpdateRequest $request, Quest $quest)
     {
-        $quest = Quest::findOrFail($id);
-        $quest->response = $request->response;
-        $quest->status = 'submitted';
-        $quest->save();
+        $quest->update($request->validated());
 
         // TODO: Fire event untuk kirim email
 

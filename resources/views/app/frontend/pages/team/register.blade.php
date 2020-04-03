@@ -29,7 +29,7 @@
             @endif
 
             <div class="card card-primary">
-              <form id="register" class="needs-validation" action="{{ route('team.register.store') }}" method="POST">
+              <form id="register" class="needs-validation" action="{{ route('team.store') }}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="tab-content">

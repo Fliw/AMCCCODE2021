@@ -28,7 +28,7 @@
               <div class="card-body">
                 <div class="list-group">
                   @foreach ($data['quests'] as $quest)
-                    <a href="{{ route('quests.show', ['quest' => $quest['id'] ]) }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <a href="{{ route('team.quests.show', ['quest' => $quest['id'] ]) }}" class="list-group-item list-group-item-action flex-column align-items-start">
                       <div class="d-flex w-100 justify-content-between">
                         <h6 class="mb-1">
                           {{ $quest['title'] }}

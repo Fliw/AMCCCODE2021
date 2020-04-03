@@ -10,11 +10,11 @@ use App\Models\PaymentMethod;
 class PaymentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Handle the incoming request.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __invoke()
     {
         $data['session'] = Auth::user()->loadMissing([
             'payments',
