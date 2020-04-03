@@ -9,6 +9,8 @@ class Quest extends Model
 {
     protected $table = 'quests';
 
+    protected $guarded = [];
+
     protected $appends = [
         'date_diff',
         'is_open',
