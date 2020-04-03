@@ -31,13 +31,7 @@ class EventController extends Controller
      */
     public function store(EventCreateRequest $request)
     {
-        $data = $request->validated();
-
-        $event = new Event;
-        $event->name = $data['name'];
-        $event->description = $data['description'];
-        $event->published = true;
-        $event->save();
+        Event::create($request->validated());
 
         return redirect()->route('admin.events.index')->with('status', [
             'element' => 'success',
@@ -68,11 +62,7 @@ class EventController extends Controller
      */
     public function update(EventUpdateRequest $request, Event $event)
     {
-        $data = $request->validated();
-
-        $event->name = $data['name'];
-        $event->description = $data['description'];
-        $event->save();
+        $event->update($request->validated());
 
         return redirect()->route('admin.events.index')->with('status', [
             'element' => 'success',

@@ -9,6 +9,8 @@ class Configuration extends Model
 {
     protected $table = 'configurations';
 
+    protected $guarded = [];
+
     protected $casts = [
         'active' => 'boolean',
         'deletable' => 'boolean'

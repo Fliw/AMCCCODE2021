@@ -32,14 +32,7 @@ class ConfigurationController extends Controller
      */
     public function store(CreateRequest $request)
     {
-        $data = $request->validated();
-        
-        $config = new Configuration;
-        $config->key = $data['key'];
-        $config->type = $data['type'];
-        $config->value = $data['value'];
-        $config->active = $data['active'];
-        $config->save();
+        Configuration::create($request->validated());
 
         return redirect()->route('admin.configs.index')->with('status', [
             'element' => 'success',
@@ -71,12 +64,7 @@ class ConfigurationController extends Controller
      */
     public function update(UpdateRequest $request, Configuration $config)
     {
-        $data = $request->validated();
-        
-        $config->type = $data['type'];
-        $config->value = $data['value'];
-        $config->active = $data['active'];
-        $config->save();
+        $config->update($request->validated());
 
         return redirect()->route('admin.configs.index')->with('status', [
             'element' => 'success',

@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Schedule extends Model
 {
     protected $table = 'schedules';
+
+    protected $guarded = [];
 
     protected $dates = [
         'from',
@@ -42,6 +45,16 @@ class Schedule extends Model
     public function getToShortAttribute()
     {
         return $this->to->format('d M, H:i');
+    }
+
+    public function setFromAttribute($value)
+    {
+        $this->attributes['from'] = Carbon::parse($value);
+    }
+
+    public function setToAttribute($value)
+    {
+        $this->attributes['to'] = Carbon::parse($value);
     }
 
     public function presences()

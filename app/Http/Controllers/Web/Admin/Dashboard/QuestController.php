@@ -35,12 +35,8 @@ class QuestController extends Controller
     {
         $data = $request->validated();
 
-        foreach ($data['team_id'] as $teamId) {
-            $quest = new Quest;
-            $quest->team_id = $teamId;
-            $quest->title = $data['title'];
-            $quest->description = $data['description'];
-            $quest->save();
+        foreach ($data['team_id'] as $id) {
+            Team::find($id)->quests()->create($data);
         }
 
         return redirect()->route('admin.quests.index')->with('status', [
@@ -72,13 +68,7 @@ class QuestController extends Controller
      */
     public function update(UpdateRequest $request, Quest $quest)
     {
-        $data = $request->validated();
-
-        $quest->title = $data['title'];
-        $quest->description = $data['description'];
-        $quest->status = $data['status'];
-        $quest->reviewer_note = $data['reviewer_note'];
-        $quest->save();
+        $quest->update($request->validated());
 
         return redirect()->route('admin.quests.index')->with('status', [
             'element' => 'success',

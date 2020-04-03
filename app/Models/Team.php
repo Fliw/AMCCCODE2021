@@ -16,4 +16,9 @@ class Team extends Model
     {
         return $this->belongsTo('App\Models\CompetitionCategory');
     }
+
+    public function quests()
+    {
+        return $this->hasMany('App\Models\Quest');
+    }
 }

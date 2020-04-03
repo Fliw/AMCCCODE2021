@@ -8,6 +8,8 @@ class PaymentMethod extends Model
 {
     protected $table = 'payment_methods';
 
+    protected $guarded = [];
+
     protected $casts = [
         'usable' => 'boolean'
     ];

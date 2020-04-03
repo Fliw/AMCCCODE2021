@@ -31,14 +31,7 @@ class PaymentMethodController extends Controller
      */
     public function store(CreateRequest $request)
     {
-        $data = $request->validated();
-        
-        $method = new PaymentMethod;
-        $method->name = $data['name'];
-        $method->number = $data['number'];
-        $method->holder = $data['holder'];
-        $method->usable = $data['usable'];
-        $method->save();
+        PaymentMethod::create($request->validated());
 
         return redirect()->route('admin.paymentmethods.index')->with('status', [
             'element' => 'success',
@@ -69,13 +62,7 @@ class PaymentMethodController extends Controller
      */
     public function update(UpdateRequest $request, PaymentMethod $paymentmethod)
     {
-        $data = $request->validated();
-        
-        $paymentmethod->name = $data['name'];
-        $paymentmethod->number = $data['number'];
-        $paymentmethod->holder = $data['holder'];
-        $paymentmethod->usable = $data['usable'];
-        $paymentmethod->save();
+        $paymentmethod->update($request->validated());
 
         return redirect()->route('admin.paymentmethods.index')->with('status', [
             'element' => 'success',

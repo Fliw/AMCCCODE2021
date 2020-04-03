@@ -31,13 +31,7 @@ class NewsfeedController extends Controller
      */
     public function store(CreateRequest $request)
     {
-        $data = $request->validated();
-        $newsfeed = new Newsfeed;
-        $newsfeed->title = $data['title'];
-        $newsfeed->content = $data['content'];
-        $newsfeed->channel = $data['channel'];
-        $newsfeed->published = $data['published'];
-        $newsfeed->save();
+        Newsfeed::create($request->validated());
 
         return redirect()->route('admin.newsfeeds.index')->with('status', [
             'element' => 'success',
@@ -68,11 +62,7 @@ class NewsfeedController extends Controller
      */
     public function update(UpdateRequest $request, Newsfeed $newsfeed)
     {
-        $data = $request->validated();
-        $newsfeed->content = $data['content'];
-        $newsfeed->channel = $data['channel'];
-        $newsfeed->published = $data['published'];
-        $newsfeed->save();
+        $newsfeed->update($request->validated());
 
         return redirect()->route('admin.newsfeeds.index')->with('status', [
             'element' => 'success',
