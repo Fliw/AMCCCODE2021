@@ -8,6 +8,8 @@ class Newsfeed extends Model
 {
     protected $table = 'newsfeeds';
 
+    protected $guarded = [];
+
     protected $casts = [
         'published' => 'boolean'
     ];
