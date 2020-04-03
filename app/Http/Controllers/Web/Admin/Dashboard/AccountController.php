@@ -31,14 +31,7 @@ class AccountController extends Controller
      */
     public function store(CreateRequest $request)
     {
-        $data = $request->validated();
-        
-        $admin = new Admin;
-        $admin->identity = $data['identity'];
-        $admin->name = $data['name'];
-        $admin->email = $data['email'];
-        $admin->password = Hash::make($data['password']);
-        $admin->save();
+        Admin::create($request->validated());
 
         return redirect()->route('admin.accounts.index')->with('status', [
             'element' => 'success',
