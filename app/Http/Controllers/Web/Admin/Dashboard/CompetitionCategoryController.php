@@ -31,12 +31,7 @@ class CompetitionCategoryController extends Controller
      */
     public function store(CreateRequest $request)
     {
-        $data = $request->validated();
-
-        $category = new CompetitionCategory;
-        $category->name = $data['name'];
-        $category->description = $data['description'];
-        $category->save();
+        CompetitionCategory::create($request->validated());
 
         return redirect()->route('admin.competitioncategories.index')->with('status', [
             'element' => 'success',
@@ -67,12 +62,8 @@ class CompetitionCategoryController extends Controller
      */
     public function update(UpdateRequest $request, CompetitionCategory $competitioncategory)
     {
-        $data = $request->validated();
-
-        $competitioncategory->name = $data['name'];
-        $competitioncategory->description = $data['description'];
-        $competitioncategory->save();
-
+        $competitioncategory->update($request->validated());
+        
         return redirect()->route('admin.competitioncategories.index')->with('status', [
             'element' => 'success',
             'message' => 'Kategori dihapus!'
