@@ -29,6 +29,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('/payments', 'PaymentController')->only('index', 'update');
         Route::resource('/schedules', 'ScheduleController')->except('create', 'show');
         Route::resource('/quests', 'QuestController')->except('create', 'show');
+        Route::resource('/accounts', 'AccountController')->only('index', 'store', 'destroy');
+        Route::resource('/configs', 'ConfigurationController')->except('create', 'show');
+        Route::resource('/competitioncategories', 'CompetitionCategoryController')->except('create', 'show');
+        Route::resource('/events', 'EventController')->except('create', 'show');
+        Route::resource('/paymentmethods', 'PaymentMethodController')->except('create', 'show');
     });
 });
 
