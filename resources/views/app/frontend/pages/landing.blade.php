@@ -81,7 +81,7 @@
               <h1>>_<span id="typed"></span></h1>
               <div class="text-center">
                 <p>Code Adalah Rangkaian Acara Kompetisi Antar Mobile Developer Dan Web Developer Serta Seminar Bertaraf Nasional.</p>
-                <a class="button buttonCode" href="{{ route('ticket.index') }}">Registrasi Tim</a>
+                <a class="button buttonCode" href="{{ route('team.register') }}">Registrasi Tim</a>
                 <a class="button buttonCode" href="{{ route('ticket.index') }}">Seminar</a>
               </div>
             </div>
