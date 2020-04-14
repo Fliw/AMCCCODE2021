@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class AdminTableSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class AdminTableSeeder extends Seeder
             'identity' => '00.00.0000',
             'name' => 'Administrator',
             'email' => 'admin@example.com',
-            'password' => bcrypt('amccamikom')
+            'password' => 'amccamikom'
         ]);
     }
 }
