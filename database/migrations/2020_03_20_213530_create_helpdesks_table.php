@@ -15,7 +15,7 @@ class CreateHelpdesksTable extends Migration
     {
         Schema::create('helpdesks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->enum('type', ['contact', 'docs']);
+            $table->enum('type', ['confirmation', 'contact', 'docs']);
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('target');
