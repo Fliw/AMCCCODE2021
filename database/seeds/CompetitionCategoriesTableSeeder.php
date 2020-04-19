@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\CompetitionCategory;
 
 class CompetitionCategoriesTableSeeder extends Seeder
 {
@@ -12,6 +11,16 @@ class CompetitionCategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(CompetitionCategory::class, 3)->create();
+        App\Models\CompetitionCategory::create([
+            'name' => 'IT Business Idea',
+        ]);
+
+        App\Models\CompetitionCategory::create([
+            'name' => 'Mobile Apps Development',
+        ]);
+
+        App\Models\CompetitionCategory::create([
+            'name' => 'Web Apps Development',
+        ]);
     }
 }

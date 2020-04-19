@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web\Frontend;
 
+use App\Events\AttendeeRegistered;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -55,6 +56,8 @@ class TicketController extends Controller
         }
 
         $data['order'] = $request->session()->get('order-placed');
+
+        event(new AttendeeRegistered($data['order']));
 
         return view('app.frontend.pages.tickets.done', compact('data'));
     }

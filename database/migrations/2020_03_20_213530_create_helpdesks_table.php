@@ -14,8 +14,10 @@ class CreateHelpdesksTable extends Migration
     public function up()
     {
         Schema::create('helpdesks', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            
             $table->bigIncrements('id');
-            $table->enum('type', ['contact', 'docs']);
+            $table->enum('type', ['confirmation', 'contact', 'docs']);
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('target');

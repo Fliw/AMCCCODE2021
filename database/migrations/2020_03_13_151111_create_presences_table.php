@@ -14,6 +14,8 @@ class CreatePresencesTable extends Migration
     public function up()
     {
         Schema::create('presences', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            
             $table->bigIncrements('id');
             $table->unsignedBigInteger('attendee_id');
             $table->foreign('attendee_id')
