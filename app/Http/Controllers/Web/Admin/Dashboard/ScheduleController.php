@@ -9,6 +9,8 @@ use App\Http\Requests\Web\Admin\ScheduleCreateRequest as CreateRequest;
 use App\Http\Requests\Web\Admin\ScheduleUpdateRequest as UpdateRequest;
 use App\Models\Event;
 use App\Models\Schedule;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ScheduleExport;
 
 class ScheduleController extends Controller
 {
@@ -88,5 +90,8 @@ class ScheduleController extends Controller
             'element' => 'success',
             'message' => 'Jadwal berhasil dihapus.'
         ]);
+    }
+    public function export(){
+        return Excel::download(new ScheduleExport,'Schedule.xlsx');
     }
 }

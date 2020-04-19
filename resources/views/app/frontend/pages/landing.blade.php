@@ -42,7 +42,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
           <!-- Brand and toggle get grouped for better mobile display -->
-          <a class="navbar-brand logo_h" href="index.html"><img width="100px" src="{{ asset('code2020/img/logo.png') }}" alt=""></a>
+          <a class="navbar-brand logo_h" href="#"><img width="100px" src="{{ asset('code2020/img/logo.png') }}" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -145,7 +145,7 @@
       <div id="lomba" class="container">
         <h2 class="section-intro__title">Acara Yang Dilombakan</h2>
         <div class="row mx-auto">
-          <div class="col-lg-6" data-aos="zoom-in-up" data-aos-delay="200" style="float:none;margin:auto;">
+          <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200" style="float:none;margin:auto;">
             <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
               <span class="card-feature__icon text-center">
                 <img src="{{ asset('code2020/img/android.png') }}" width="60px">
@@ -154,7 +154,16 @@
               <p class="card-feature__subtitle text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in metus condimentum, pretium leo vel, vehicula erat. Vivamus augue neque, sollicitudin dictum vulputate non, malesuada non dui. Sed bibendum vel quam et auctor.</p>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="zoom-in-up" data-aos-delay="200" style="float:none;margin:auto;">
+          <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200" style="float:none;margin:auto;">
+            <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
+              <span class="card-feature__icon text-center">
+                <img src="{{ asset('code2020/img/ide.png') }}" width="60px">
+              </span>
+              <h3 class="card-feature__title text-center">IT Business Idea</h3>
+              <p class="card-feature__subtitle text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in metus condimentum, pretium leo vel, vehicula erat. Vivamus augue neque, sollicitudin dictum vulputate non, malesuada non dui. Sed bibendum vel quam et auctor.</p>
+            </div>
+          </div>
+          <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200" style="float:none;margin:auto;">
             <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
               <span class="card-feature__icon text-center">
                 <img src="{{ asset('code2020/img/web.png') }}" width="60px">
@@ -169,12 +178,17 @@
     <!--================ Feature section end =================-->      
     
     <!--================ about section start =================-->      
-    <section id="tanggal" class="section-padding--small bg-magnolia">
+    
+    <!--================ about section end =================-->      
+  
+  <!-- ================ start footer Area ================= -->
+  <footer class="footer-area section-gap">
+    <section id="tanggal" class="section-padding--small">
       <div class="container">
         <div class="row no-gutters align-items-center">
           <div class="col-md-5 mb-5 mb-md-0" data-aos="zoom-in-up" data-aos-delay="200">
             <div class="about__content">
-              <h2>Kapan CODE Akan Dilaksanakan?</h2>
+              <h2 class="text-white">Kapan CODE Akan Dilaksanakan?</h2>
               <p>Jadwal Acara CODE selengkapnya Dapat Dilihat Dibawah ini:</p>
             </div>
           </div>
@@ -186,11 +200,6 @@
         </div>
       </div>
     </section>
-    
-    <!--================ about section end =================-->      
-  
-  <!-- ================ start footer Area ================= -->
-  <footer class="footer-area section-gap">
 		<div class="container">
 			<div class="row">
           <div class="col-md-5 mb-5 mb-md-0">
@@ -201,9 +210,7 @@
           </div>
           <div class="col-md-7">
             <div class="about__img text-center">
-              <img src="{{ asset('code2020/img/logo.png') }}" width="100px">
-              <img src="{{ asset('code2020/img/karakter.png') }}" width="100px">
-              <img src="{{ asset('code2020/img/logo.png') }}" width="100px">
+              <img src="{{ asset('code2020/img/logo.png') }}" width="300px">
             </div>
           </div>
 			<div class="footer-bottom row align-items-center text-center text-lg-left">
