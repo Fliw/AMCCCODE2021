@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AdminTableSeeder::class);
         $this->call(ConfigurationTableSeeder::class);
-        $this->call(SchedulesTableSeeder::class);
+        // $this->call(SchedulesTableSeeder::class);
         $this->call(CompetitionCategoriesTableSeeder::class);
         $this->call(HelpdesksTableSeeder::class);
-        $this->call(NewsfeedsTableSeeder::class);
+        // $this->call(NewsfeedsTableSeeder::class);
         $this->call(PaymentMethodsTableSeeder::class);
         $this->call(TicketsTableSeeder::class);
         

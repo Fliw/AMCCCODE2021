@@ -15,7 +15,7 @@ class HelpdesksTableSeeder extends Seeder
             'type' => 'confirmation',
             'name' => 'CP Konfirmasi',
             'target' => 'https://wa.me/',
-            'workdays' => '1,2,3,4,5,6',
+            'workdays' => [1, 2, 3, 4, 5, 6],
             'from' => '09:00',
             'to' => '18:00'
         ]);
@@ -24,7 +24,7 @@ class HelpdesksTableSeeder extends Seeder
             'type' => 'contact',
             'name' => 'CP Bantuan 1',
             'target' => 'https://wa.me/',
-            'workdays' => '0',
+            'workdays' => [0],
             'from' => '09:00',
             'to' => '18:00'
         ]);
