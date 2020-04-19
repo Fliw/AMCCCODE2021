@@ -28,6 +28,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('/newsfeeds', 'NewsfeedController')->except('create', 'show');
         Route::resource('/payments', 'PaymentController')->only('index', 'update');
         Route::resource('/schedules', 'ScheduleController')->except('create', 'show');
+        Route::get('/schedules/export', 'ScheduleController@export');
         Route::resource('/quests', 'QuestController')->except('create', 'show');
         Route::resource('/accounts', 'AccountController')->only('index', 'store', 'destroy');
         Route::resource('/configs', 'ConfigurationController')->except('create', 'show');

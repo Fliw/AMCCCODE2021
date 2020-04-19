@@ -14,6 +14,7 @@
         <button class="btn btn-primary btn-icon icon-left" data-toggle="modal" data-target="#modal-add">
           <i class="fas fa-plus"></i> Tambah Baru
         </button>
+        <a href="schedules/export" class="btn btn-success btn-icon icon-left" target="_blank">EXPORT EXCEL</a>
       </div>
     </div>
     <div class="section-body">
