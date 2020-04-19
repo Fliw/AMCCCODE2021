@@ -42,6 +42,8 @@ class SendInvoice
     public function handle($event)
     {
         if ($event instanceof TeamRegistered) {
+            if (! getConfig('team.onregistered.issuepayment')) return;
+
             $event->invoice = Payment::with('attendee', 'ticket', 'method')
                 ->where('attendee_id', $event->team['leader_id'])
                 ->firstOrFail();

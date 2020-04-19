@@ -44,23 +44,27 @@ class InitializeTeam
         $this->teamService->find($event->team['id']);
 
         // Issue initial payment
-        $ticket = Ticket::whereSlug(getConfig('team-ticket-1'))->first();
-        throw_if(!$ticket, new RuntimeException('Ticket team-ticket-1 is not found'));
-        
-        $paymentMethod = PaymentMethod::whereUsable(true)->first();
-        throw_if(!$paymentMethod, new RuntimeException('No usable payment method found'));
-        
-        $this->teamService->issuePayment([
-            'ticket_id' => $ticket->id,
-            'amount' => filter_var($ticket->price, FILTER_SANITIZE_NUMBER_INT),
-            'method_id' => $paymentMethod->id
-        ]);
+        if (getConfig('team.onregistered.issuepayment')) {
+            $ticket = Ticket::whereSlug(getConfig('team-ticket-1'))->first();
+            throw_if(!$ticket, new RuntimeException('Ticket team-ticket-1 is not found'));
+            
+            $paymentMethod = PaymentMethod::whereUsable(true)->first();
+            throw_if(!$paymentMethod, new RuntimeException('No usable payment method found'));
+            
+            $this->teamService->issuePayment([
+                'ticket_id' => $ticket->id,
+                'amount' => filter_var($ticket->price, FILTER_SANITIZE_NUMBER_INT),
+                'method_id' => $paymentMethod->id
+            ]);
+        }
 
         // Issue initial quest
-        $this->teamService->issueQuest([
-            'title' => getConfig('team-first-quest-title'),
-            'description' => getConfig('team-first-quest-content'),
-            'status' => getConfig('team-first-quest-status')
-        ]);
+        if (getConfig('team.onregistered.sendquest')) {
+            $this->teamService->issueQuest([
+                'title' => getConfig('team-first-quest-title'),
+                'description' => getConfig('team-first-quest-content'),
+                'status' => getConfig('team-first-quest-status')
+            ]);
+        }
     }
 }
