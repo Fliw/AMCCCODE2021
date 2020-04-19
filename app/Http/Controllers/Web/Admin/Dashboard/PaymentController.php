@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web\Admin\Dashboard;
 
+use App\Events\InvoicePaid;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
@@ -36,6 +37,10 @@ class PaymentController extends Controller
         $payment->paid = $data['paid'];
         $payment->save();
         $payment->load('attendee');
+
+        if ($payment->paid) {
+            event(new InvoicePaid($payment));
+        }
 
         $message = 'Pembayaran #? a/n ? berhasil ?';
         $message = Str::replaceArray('?', [
