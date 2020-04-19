@@ -8,6 +8,8 @@ class Payment extends Model
 {
     protected $table = 'payments';
 
+    protected $guarded = [];
+
     protected $casts = [
         'paid' => 'boolean'
     ];

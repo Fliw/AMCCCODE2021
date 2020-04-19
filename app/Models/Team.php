@@ -21,4 +21,9 @@ class Team extends Model
     {
         return $this->hasMany('App\Models\Quest');
     }
+
+    public function leader()
+    {
+        return $this->belongsTo('App\Models\Attendee', 'leader_id');
+    }
 }
