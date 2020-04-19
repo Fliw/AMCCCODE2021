@@ -42,12 +42,14 @@ class InitializeTeam
         }
 
         $this->teamService->find($event->team['id']);
-        
+
         // Issue initial payment
-        $ticket = Ticket::whereSlug(getConfig('team-ticket-1'))->first()
-            ?? abort(404, 'Ticket team-ticket-1 is not found');
-        $paymentMethod = PaymentMethod::whereUsable(true)->first()
-            ?? abort(404, 'No usable payment method found');
+        $ticket = Ticket::whereSlug(getConfig('team-ticket-1'))->first();
+        throw_if(!$ticket, new RuntimeException('Ticket team-ticket-1 is not found'));
+        
+        $paymentMethod = PaymentMethod::whereUsable(true)->first();
+        throw_if(!$paymentMethod, new RuntimeException('No usable payment method found'));
+        
         $this->teamService->issuePayment([
             'ticket_id' => $ticket->id,
             'amount' => filter_var($ticket->price, FILTER_SANITIZE_NUMBER_INT),
