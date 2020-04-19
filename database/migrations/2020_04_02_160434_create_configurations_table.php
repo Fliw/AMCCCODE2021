@@ -14,6 +14,8 @@ class CreateConfigurationsTable extends Migration
     public function up()
     {
         Schema::create('configurations', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            
             $table->bigIncrements('id');
             $table->string('category')->default('all');
             $table->string('key')->unique();

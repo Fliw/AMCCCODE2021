@@ -14,6 +14,8 @@ class CreateQuestsTable extends Migration
     public function up()
     {
         Schema::create('quests', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            
             $table->bigIncrements('id');
             $table->unsignedBigInteger('team_id');
             $table->foreign('team_id')
