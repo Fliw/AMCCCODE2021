@@ -66,5 +66,21 @@ class ConfigurationTableSeeder extends Seeder
             'active' => true,
             'deletable' => false
         ]);
+
+        \App\Models\Configuration::create([
+            'key' => 'team.onregistered.sendquest',
+            'type' => 'boolean',
+            'value' => 'true',
+            'active' => true,
+            'deletable' => false
+        ]);
+
+        \App\Models\Configuration::create([
+            'key' => 'team.onregistered.issuepayment',
+            'type' => 'boolean',
+            'value' => 'true',
+            'active' => true,
+            'deletable' => false
+        ]);
     }
 }
