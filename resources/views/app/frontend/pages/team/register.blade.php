@@ -178,7 +178,7 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
-                          <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}" required minlength="3" maxlength="100">
+                          <input type="password" name="password" class="form-control @if($errors->has('password') || $errors->has('password_confirmation')) is-invalid @endif" value="{{ old('password') }}" required minlength="3" maxlength="100">
                           <div class="invalid-feedback">
                             {{ $errors->first('password') }}
                           </div>
@@ -188,7 +188,10 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Konfirmasi Password</label>
                         <div class="col-sm-10">
-                          <input type="password" name="password_confirmation" class="form-control" required minlength="3" maxlength="100">
+                          <input type="password" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" required minlength="3" maxlength="100">
+                          <div class="invalid-feedback">
+                            {{ $errors->first('password_confirmation') }}
+                          </div>
                         </div>
                       </div>
 

@@ -39,7 +39,8 @@ class TeamStoreRequest extends FormRequest
             'member.*.name' => 'required_with:member|string|min:3',
             
             'email' => 'required|email|unique:attendees,email',
-            'password' => 'required|string|min:6|confirmed'
+            'password' => 'required|string|min:6',
+            'password_confirmation' => 'required_with:password|string|same:password',
         ];
     }
 }
