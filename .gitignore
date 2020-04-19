@@ -4,6 +4,7 @@
 /public/css
 /public/fonts
 /public/js
+/public/code2020/vendor
 /public/mix-manifest.json
 /storage/*.key
 /vendor
