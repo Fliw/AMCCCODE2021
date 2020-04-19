@@ -6,6 +6,19 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Registrasi Tim &mdash; {{ config('app.name') }}</title>
   <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+  <style>
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  </style>
 </head>
 
 <body>
@@ -27,9 +40,15 @@
                   {{ session()->get('status') }}
               </div>
             @endif
+            @if($errors->any())
+              <div class="alert alert-danger">
+                Whoops! Terdapat form dengan data yang belum sesuai. 
+                Mohon cek kembali data kamu di menu registrasi.
+              </div>
+            @endif
 
             <div class="card card-primary">
-              <form id="register" class="needs-validation" action="{{ route('team.store') }}" method="POST">
+              <form id="register" action="{{ route('team.store') }}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="tab-content">
@@ -120,7 +139,6 @@
                         <div class="col-sm-10">
                           <select id="jumlah_anggota" class="form-control @error('member') is-invalid @enderror">
                             <option hidden>&mdash; Pilih Jumlah Anggota &mdash;</option>
-                            <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                           </select>
