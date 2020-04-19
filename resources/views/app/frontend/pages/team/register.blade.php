@@ -66,7 +66,7 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Nama Tim</label>
                         <div class="col-sm-10">
-                          <input type="text" name="tim[nama]" class="form-control @error('tim.nama') is-invalid @enderror" value="{{ old('tim.nama') }}" required minlength="3" maxlength="100">
+                          <input type="text" id="tim_nama" name="tim[nama]" class="form-control @error('tim.nama') is-invalid @enderror" value="{{ old('tim.nama') }}" required minlength="3" maxlength="100">
                           <div class="invalid-feedback">
                             {{ $errors->first('identity') }}
                           </div>
@@ -76,7 +76,7 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Asal Institusi</label>
                         <div class="col-sm-10">
-                          <input type="text" name="tim[institusi]" class="form-control @error('tim.institusi') is-invalid @enderror" value="{{ old('tim.institusi') }}" required minlength="3" maxlength="100">
+                          <input type="text" id="tim_institusi" name="tim[institusi]" class="form-control @error('tim.institusi') is-invalid @enderror" value="{{ old('tim.institusi') }}" required minlength="3" maxlength="100">
                           <div class="invalid-feedback">
                             {{ $errors->first('tim.institusi') }}
                           </div>
@@ -86,7 +86,7 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Kategori Lomba</label>
                         <div class="col-sm-10">
-                          <select name="tim[kategori]" id="kategori" class="form-control @error('tim.kategori') is-invalid @enderror">
+                          <select name="tim[kategori]" id="tim_kategori" class="form-control @error('tim.kategori') is-invalid @enderror">
                             <option hidden>&mdash; Pilih Kategori Lomba &mdash;</option>
                             @foreach ($data['categories'] as $category)
                               <option @if(old('tim.kategori') == $category->id) selected @endif value="{{ $category->id }}">{{ $category->name }}</option>
@@ -100,7 +100,7 @@
 
                       <hr>
                       <div class="text-right">
-                        <a href="#team-step-2" class="btn btn-primary btn-icon icon-right" data-toggle="tab" role="tab">Ketua & Anggota <i class="fas fa-arrow-right"></i></a>
+                        <a href="#team-step-2" id="to-step-2" class="btn btn-primary btn-icon icon-right disabled" data-toggle="tab" role="tab">Ketua & Anggota <i class="fas fa-arrow-right"></i></a>
                       </div>
                     </div> <!-- End First Step -->
 
@@ -111,13 +111,13 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Ketua</label>
                         <div class="col-sm-4">
-                          <input type="text" name="ketua[nim]" placeholder="NIM" class="form-control @error('ketua.nim') is-invalid @enderror" value="{{ old('ketua.nim') }}" required minlength="3" maxlength="30">
+                          <input type="text" id="ketua_nim" name="ketua[nim]" placeholder="NIM" class="form-control @error('ketua.nim') is-invalid @enderror" value="{{ old('ketua.nim') }}" required minlength="3" maxlength="30">
                           <div class="invalid-feedback">
                             {{ $errors->first('ketua.nim') }}
                           </div>
                         </div>
                         <div class="col-sm-6">
-                          <input type="text" name="ketua[nama]" placeholder="Nama Lengkap" class="form-control @error('ketua.nama') is-invalid @enderror" value="{{ old('ketua.nama') }}" required minlength="3" maxlength="100">
+                          <input type="text" id="ketua_nama" name="ketua[nama]" placeholder="Nama Lengkap" class="form-control @error('ketua.nama') is-invalid @enderror" value="{{ old('ketua.nama') }}" required minlength="3" maxlength="100">
                           <div class="invalid-feedback">
                             {{ $errors->first('ketua.nama') }}
                           </div>
@@ -127,7 +127,7 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">WhatsApp Ketua</label>
                         <div class="col-sm-10">
-                          <input type="number" name="ketua[whatsapp]" placeholder="Nomor WhatsApp Ketua" class="form-control @error('ketua.whatsapp') is-invalid @enderror" value="{{ old('ketua.whatsapp') }}" required minlength="9" maxlength="14">
+                          <input type="number" id="ketua_wa" name="ketua[whatsapp]" placeholder="Nomor WhatsApp Ketua" class="form-control @error('ketua.whatsapp') is-invalid @enderror" value="{{ old('ketua.whatsapp') }}" required minlength="9" maxlength="14">
                           <div class="invalid-feedback">
                             {{ $errors->first('ketua.whatsapp') }}
                           </div>
@@ -156,7 +156,7 @@
                           <a href="#team-step-1" class="btn btn-default btn-icon icon-left" data-toggle="tab" role="tab"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                         <div class="col-sm-6 text-right">
-                          <a href="#team-step-3" class="btn btn-primary btn-icon icon-right" data-toggle="tab" role="tab">Buat Akun <i class="fas fa-arrow-right"></i></a>
+                          <a href="#team-step-3" id="to-step-3" class="btn btn-primary btn-icon icon-right disabled" data-toggle="tab" role="tab">Buat Akun <i class="fas fa-arrow-right"></i></a>
                         </div>
                       </div>
                     </div> <!-- End Second Step -->
@@ -168,7 +168,7 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Email Ketua</label>
                         <div class="col-sm-10">
-                          <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required minlength="3" maxlength="100">
+                          <input type="email" id="third_email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required minlength="3" maxlength="100">
                           <div class="invalid-feedback">
                             {{ $errors->first('email') }}
                           </div>
@@ -178,7 +178,7 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
-                          <input type="password" name="password" class="form-control @if($errors->has('password') || $errors->has('password_confirmation')) is-invalid @endif" value="{{ old('password') }}" required minlength="3" maxlength="100">
+                          <input type="password" id="third_password" name="password" class="form-control @if($errors->has('password') || $errors->has('password_confirmation')) is-invalid @endif" value="{{ old('password') }}" required minlength="3" maxlength="100">
                           <div class="invalid-feedback">
                             {{ $errors->first('password') }}
                           </div>
@@ -188,7 +188,7 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Konfirmasi Password</label>
                         <div class="col-sm-10">
-                          <input type="password" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" required minlength="3" maxlength="100">
+                          <input type="password" id="third_confirm" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" required minlength="3" maxlength="100">
                           <div class="invalid-feedback">
                             {{ $errors->first('password_confirmation') }}
                           </div>
@@ -201,7 +201,7 @@
                           <a href="#team-step-2" class="btn btn-default btn-icon icon-left" data-toggle="tab" role="tab"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                         <div class="col-sm-6 text-right">
-                          <button type="submit" class="btn btn-primary btn-icon icon-right">Selesaikan Registrasi <i class="fas fa-arrow-right"></i></button>
+                          <button type="submit" id="submit" class="btn btn-primary btn-icon icon-right disabled">Selesaikan Registrasi <i class="fas fa-arrow-right"></i></button>
                         </div>
                       </div>
                     </div> <!-- End Third Step -->

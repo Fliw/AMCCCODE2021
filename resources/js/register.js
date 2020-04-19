@@ -1,3 +1,98 @@
+$( document ).ready(function() {
+  $('#tim_nama').keyup(function() {
+    validateStep1();
+  });
+  $('#tim_institusi').keyup(function() {
+    validateStep1();
+  });
+  $('#tim_kategori').change(function() {
+    validateStep1();
+  });
+
+  $("#ketua_nim").keyup(function() {
+    validateStep2();
+  });
+  $("#ketua_nama").keyup(function() {
+    validateStep2();
+  });
+  $("#ketua_wa").keyup(function() {
+    validateStep2();
+  });
+  $('#jumlah_anggota').on('change', function (e) {
+    validateStep2();
+    $("input[name^='member']").keyup(function() {
+      validateStep2();
+    });
+  })
+
+  $('#third_email').keyup(function() {
+    validateStep3();
+  });
+  $('#third_password').keyup(function() {
+    validateStep3();
+  });
+  $('#third_confirm').keyup(function() {
+    validateStep3();
+  });
+});
+
+function validateStep1() {
+  let formNamaTim = $('#tim_nama').val().length;
+  let formInstitusi = $('#tim_institusi').val().length;
+  let formKategori = $('#tim_kategori').val();
+
+  if (formNamaTim >= 3 && formInstitusi >= 6 && formKategori > 0) {
+    $('#to-step-2').removeClass('disabled');
+  } else {
+    $('#to-step-2').addClass('disabled');
+  }
+}
+
+function validateStep2() {
+  let formNimKetua = $('#ketua_nim').val().length;
+  let formNamaKetua = $('#ketua_nama').val().length;
+  let formWaKetua = $('#ketua_wa').val().length;
+  let formMemberData = $("div[id^='anggota-wrap-'").length
+  let formMember = []
+  let formMemberPass = false;
+  
+  for (i = 1; i <= formMemberData; i++) {
+    let nim = $(`input[name="member[${i}][nim]"]`).val().length;
+    let name = $(`input[name="member[${i}][name]"]`).val().length;
+
+    if (nim >= 3 && name >= 6) {
+      formMember[i-1] = true
+    } else {
+      formMember[i-1] = false
+    }
+  }
+
+  if (formMember.length > 0 && formMember.indexOf(false) == -1) {
+    formMemberPass = true;
+  } else {
+    formMemberPass = false;
+  }
+
+  if (formNimKetua > 3 && formNamaKetua >= 6 && formWaKetua >= 10 && formMemberPass) {
+    $('#to-step-3').removeClass('disabled');
+  } else {
+    $('#to-step-3').addClass('disabled');
+  }
+}
+
+function validateStep3() {
+  let formEmail = $('#third_email').val().length;
+  let formPassword = $('#third_password').val();
+  let formPasswordConfirm = $('#third_confirm').val();
+
+  if (formEmail >= 6 && formPassword.length >= 6 && formPasswordConfirm.length >= 6 && (formPassword === formPasswordConfirm)) {
+    $('#submit').removeClass('disabled');
+  } else {
+    $('#submit').addClass('disabled');
+  }
+}
+
+
 $('#jumlah_anggota').on('change', function (e) {
     // Jumlah inputan anggota saat ini
     let domCount = $("div[id^='anggota-wrap-'").length
