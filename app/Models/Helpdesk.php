@@ -104,4 +104,9 @@ class Helpdesk extends Model
 
         return Str::replaceArray('?', [$daysWord, $hoursWord], $placeholder);
     }
+
+    public function scopeConfirmation($query)
+    {
+        return $query->where('type', 'confirmation');
+    }
 }

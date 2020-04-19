@@ -14,6 +14,7 @@ require('laravel-mix-purgecss');
 
 mix.sass('resources/sass/app.scss', 'public/css')
     .js('resources/js/app.js', 'public/js').extract()
+    .js('resources/js/register.js', 'public/js')
     .purgeCss({
         whitelistPatterns: [
             /default$/,

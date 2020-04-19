@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Web\Frontend\Team;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Events\TeamRegistered;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Web\Frontend\TeamStoreRequest;
 use App\Models\CompetitionCategory;
 use App\Services\TeamService;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -23,26 +24,31 @@ class RegisterController extends Controller
         return view('app.frontend.pages.team.register', compact('data'));
     }
 
-    public function store(Request $request)
+    public function store(TeamStoreRequest $request)
     {
+        $data = $request->validated();
+
         $newLeader = [
-            'name' => $request->ketua['nama'],
-            'identity' => $request->ketua['nim'],
-            'institution' => $request->tim['institusi'],
-            'whatsapp' => $request->ketua['whatsapp'],
-            'email' => $request->email,
-            'password' => $request->password
+            'name' => $data['ketua']['nama'],
+            'identity' => $data['ketua']['nim'],
+            'institution' => $data['tim']['institusi'],
+            'whatsapp' => $data['ketua']['whatsapp'],
+            'email' => $data['email'],
+            'password' => $data['password']
         ];
 
         $newTeam = [
-            'name' => $request->tim['nama'],
-            'institution' => $request->tim['institusi'],
-            'category_id' => $request->tim['kategori'],
-            'members' => $request->member ?? [],
+            'name' => $data['tim']['nama'],
+            'institution' => $data['tim']['institusi'],
+            'category_id' => $data['tim']['kategori'],
+            'members' => $data['member'] ?? [],
         ];
 
         $team = new TeamService;
         $team = $team->create($newLeader, $newTeam);
+
+        // Dispatch new team related events
+        event(new TeamRegistered($team));
 
         Auth::loginUsingId($team['leader_id']);
         

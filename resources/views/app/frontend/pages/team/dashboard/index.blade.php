@@ -67,7 +67,7 @@
             <div class="card-body">
               <ul class="list-group">
                 @foreach ($data['quests'] as $quest)
-                  <a href="{{ route('quests.show', ['quest' => $quest['id'] ]) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                  <a href="{{ route('team.quests.show', ['quest' => $quest['id'] ]) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                     <span>{{ $quest['title'] }} <br/>&mdash; <small>{{ $quest['date_diff'] }}</small></span> 
                     <span class="badge badge-{{ $quest['state']['element'] }} badge-pill">
                       {{ $quest['state']['message'] }}
