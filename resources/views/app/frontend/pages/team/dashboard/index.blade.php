@@ -17,17 +17,21 @@
           <div class="card">
             <div class="card-body">
               <ul class="list-group">
-                @foreach ($data['session']['payments_unpaid'] as $payment)
-                  <a href="{{ route('team.payments') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <span><strong>{{ $payment['ticket']['name'] }}</strong> <br/>
-                      <strong>Jumlah: </strong> {{ $payment['ticket']['price'] }} <br/>
-                      {{ $payment['method']['name'] }} ({{ $payment['method']['number'] }} a.n. {{ $payment['method']['holder'] }})</strong><br/>
-                    </span> 
-                    <span class="badge badge-warning badge-pill">
-                      Menunggu
-                    </span>
-                  </a>
-                @endforeach
+                @if (count($data['session']['payments_unpaid']) > 0)
+                  @foreach ($data['session']['payments_unpaid'] as $payment)
+                    <a href="{{ route('team.payments') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                      <span><strong>{{ $payment['ticket']['name'] }}</strong> <br/>
+                        <strong>Jumlah: </strong> {{ $payment['ticket']['price'] }} <br/>
+                        {{ $payment['method']['name'] }} ({{ $payment['method']['number'] }} a.n. {{ $payment['method']['holder'] }})</strong><br/>
+                      </span> 
+                      <span class="badge badge-warning badge-pill">
+                        Menunggu
+                      </span>
+                    </a>
+                  @endforeach
+                @else
+                  <b>Yeay!</b> Administrasi sudah beres.
+                @endif
               </ul>
             </div>
           </div>
@@ -66,14 +70,19 @@
           <div class="card">
             <div class="card-body">
               <ul class="list-group">
-                @foreach ($data['quests'] as $quest)
-                  <a href="{{ route('team.quests.show', ['quest' => $quest['id'] ]) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <span>{{ $quest['title'] }} <br/>&mdash; <small>{{ $quest['date_diff'] }}</small></span> 
-                    <span class="badge badge-{{ $quest['state']['element'] }} badge-pill">
-                      {{ $quest['state']['message'] }}
-                    </span>
-                  </a>
-                @endforeach
+                @if (count($data['quests']) > 0)
+                  @foreach ($data['quests'] as $quest)
+                    <a href="{{ route('team.quests.show', ['quest' => $quest['id'] ]) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                      <span>{{ $quest['title'] }} <br/>&mdash; <small>{{ $quest['date_diff'] }}</small></span> 
+                      <span class="badge badge-{{ $quest['state']['element'] }} badge-pill">
+                        {{ $quest['state']['message'] }}
+                      </span>
+                    </a>
+                  @endforeach
+                @else
+                  <b>Wohoo!</b>
+                  Kamu sudah menyelesaikan semua quest! Tunggu quest berikutnya ya...
+                @endif
               </ul>
             </div>
           </div>
@@ -85,18 +94,23 @@
           <div class="card">
             <div class="card-body">
               <ul class="list-group">
-                @foreach ($data['helpdesks'] as $helpdesk)
-                  <a @if($helpdesk['is_available']) href="{{ $helpdesk['target'] }}" @endif
-                    class="list-group-item d-flex justify-content-between align-items-center list-group-item-action"
-                    target="_blank"
-                    data-toggle="tooltip" data-placement="left" title="{{ $helpdesk['help_pretty'] }}">
-                    {{ $helpdesk['name'] }}
-                    
-                    <span class="badge badge-{{ $helpdesk['status']['element'] }}">
-                      {{ $helpdesk['status']['message'] }}
-                    </span>
-                  </a>
-                @endforeach
+                @if (count($data['helpdesks']) > 0)
+                  @foreach ($data['helpdesks'] as $helpdesk)
+                    <a @if($helpdesk['is_available']) href="{{ $helpdesk['target'] }}" @endif
+                      class="list-group-item d-flex justify-content-between align-items-center list-group-item-action"
+                      target="_blank"
+                      data-toggle="tooltip" data-placement="left" title="{{ $helpdesk['help_pretty'] }}">
+                      {{ $helpdesk['name'] }}
+                      
+                      <span class="badge badge-{{ $helpdesk['status']['element'] }}">
+                        {{ $helpdesk['status']['message'] }}
+                      </span>
+                    </a>
+                  @endforeach
+                @else
+                  <b>Whoops!</b>
+                  Belum ada bantuan yang tersedia :(
+                @endif
               </ul>
             </div>
           </div>
@@ -106,13 +120,16 @@
           <p class="section-lead">Informasi terbaru akan dimunculkan disini</p>
           <div class="card">
             <div class="card-body">
-              <div class="mb-2">
-                <span class="text-job text-primary">{{ $data['newsfeed']['date_diff'] }}</span>
-                <span class="bullet"></span>
-                <a class="text-job" href="#">{{ $data['newsfeed']['title'] }}</a>
-              </div>
-              <p>{{ $data['newsfeed']['content'] }}</p>
-
+              @if (empty($data['newsfeed']))
+                Belum ada kabar terbaru :(
+              @else
+                <div class="mb-2">
+                  <span class="text-job text-primary">{{ $data['newsfeed']['date_diff'] }}</span>
+                  <span class="bullet"></span>
+                  <a class="text-job" href="#">{{ $data['newsfeed']['title'] }}</a>
+                </div>
+                <p>{{ $data['newsfeed']['content'] }}</p>
+              @endif
             </div>
           </div>
         </div>
