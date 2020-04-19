@@ -8,6 +8,6 @@ if (! function_exists('getSupportedConfigTypes')) {
 
 if (! function_exists('getConfig')) {
     function getConfig(string $key) {
-        return \App\Models\Configuration::where('key', $key)->first()->value ?? '';
+        return \App\Models\Configuration::where('key', $key)->first()->value_cast ?? '';
     }
 }
