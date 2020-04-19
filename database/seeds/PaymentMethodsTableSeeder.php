@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\PaymentMethod;
 
 class PaymentMethodsTableSeeder extends Seeder
 {
@@ -12,6 +11,18 @@ class PaymentMethodsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(PaymentMethod::class, 4)->create();
+        App\Models\PaymentMethod::create([
+            'name' => 'Bank Transfer',
+            'number' => '0123456789',
+            'holder' => 'AMCC',
+            'usable' => true
+        ]);
+
+        App\Models\PaymentMethod::create([
+            'name' => 'On-site Stand',
+            'number' => 'Basement 4 Citramart',
+            'holder' => 'AMCC',
+            'usable' => false
+        ]);
     }
 }

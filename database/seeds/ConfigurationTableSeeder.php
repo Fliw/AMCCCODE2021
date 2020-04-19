@@ -54,7 +54,7 @@ class ConfigurationTableSeeder extends Seeder
         \App\Models\Configuration::create([
             'key' => 'team-ticket-1',
             'type' => 'string',
-            'value' => 'Set a ticket slug that will be issued when team registered...',
+            'value' => 'team-1',
             'active' => true,
             'deletable' => false
         ]);
