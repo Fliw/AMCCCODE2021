@@ -93,7 +93,7 @@
                         <div class="hero-banner__content">
                             <h1>>_<span id="typed"></span></h1>
                             <div class="text-center">
-                                <p>Code Adalah Rangkaian Acara Kompetisi Antar Mobile Developer Dan Web Developer Serta
+                                <p>Code Adalah Rangkaian Acara Kompetisi Antar Mobile Developer, IT Business Idea Dan Web Developer Serta
                                     Seminar Bertaraf Nasional.</p>
                                 <a class="button buttonCode"
                                     href="{{ route('team.register') }}">Registrasi Tim</a>
@@ -113,7 +113,7 @@
                 <div class="section-intro pb-85px text-center" data-aos="zoom-in-up" data-aos-delay="200">
                     <h2 class="section-intro__title">Apa itu CODE?</h2>
                     <p class="section-intro__subtitle">CODE (Competition of Developer) Adalah Serangkaian Acara Yang
-                        Berisikan Kompetisi Antar Developer dan Seminar Nasional,
+                        Berisikan Kompetisi Antar Developer, IT Business dan Seminar Nasional,
                         Dengan Mengusung Tema
                         <br><br>
                         <i class="warnaTextCode">"Smart Digital Technology With Code"</i>
@@ -536,6 +536,7 @@
             AOS.init();
             var typed = new Typed("#typed", {
                 strings: ['Competition.<span style="color:#ffe271;">WebDevs()',
+                    'IT Business <span style="color:#ffe271;">Idea.',
                     'Competition.<span style="color:#ffe271;">MobDevs()',
                     'National <span style="color:#ffe271;">Seminar.'
                 ],
