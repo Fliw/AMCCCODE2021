@@ -163,7 +163,7 @@
 
                     <!-- Third Step -->
                     <div class="tab-pane fade" id="team-step-3" role="tabpanel">
-                      <h5 style="color: #6777ef">Siapkan akun untuk tim kamu</h5><br/>
+                      <h5 style="color: #6777ef">Terakhir siapkan akun untuk tim kamu</h5><br/>
 
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Email Ketua</label>

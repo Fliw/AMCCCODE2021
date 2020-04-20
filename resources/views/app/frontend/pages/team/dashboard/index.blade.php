@@ -50,6 +50,14 @@
                   <td>{{ $data['session']['team']['category']['name'] }}</td>
                 </tr>
                 <tr style="vertical-align: top">
+                  <td width="100"><strong>Email</strong></td>
+                  <td>{{ $data['session']['email'] }}</td>
+                </tr>
+                <tr style="vertical-align: top">
+                  <td width="100"><strong>Asal Institusi</strong></td>
+                  <td>{{ $data['session']['team']['institution'] }}</td>
+                </tr>
+                <tr style="vertical-align: top">
                   <td><strong>Ketua</strong></td>
                   <td>{{ $data['session']['name'] }} ({{ $data['session']['identity'] }})</td>
                 </tr>
