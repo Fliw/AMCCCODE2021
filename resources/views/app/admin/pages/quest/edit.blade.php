@@ -1,11 +1,11 @@
 @extends('app.admin.layouts.app')
 
-@section('title', 'Edit Quest')
+@section('title', 'Edit Submisi')
 
 @section('content')
   <section class="section">
     <div class="section-header">
-      <h1>Quest: {{ $data['quest']['title'] }}</h1>
+      <h1>Submisi: {{ $data['quest']['title'] }}</h1>
     </div>
     <div class="section-body">
       <form action="{{ route('admin.quests.update', ['quest' => $data['quest']['id']]) }}" method="POST">
@@ -23,7 +23,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="description">Deskripsi</label>
+                  <label for="description">Penjelasan</label>
                   <textarea id="description" name="description" class="form-control @error('description') is-invalid @enderror" style="min-height: 150px;" required>{{ old('description') ?? $data['quest']['description'] }}</textarea>
                   <div class="invalid-feedback">
                     {{ $errors->first('description') }}

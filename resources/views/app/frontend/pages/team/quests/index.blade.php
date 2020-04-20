@@ -1,17 +1,17 @@
 @extends('app.frontend.layouts.dashboard.app')
 
-@section('title', 'Quests')
+@section('title', 'Submissions')
 
 @section('content')
   <section class="section">
     <div class="section-header">
-      <h1>Quests</h1>
+      <h1>Submissions</h1>
     </div>
 
     <div class="section-body">
-      <h2 class="section-title">Quests</h2>
+      <h2 class="section-title">Submissions</h2>
       <p class="section-lead">
-        Melalui halaman ini, kami sewaktu-waktu akan mengirimkan quest yang harus kamu penuhi.
+        Melalui halaman ini, kami sewaktu-waktu akan mengirimkan permintaan submisi yang harus kamu penuhi.
         Bisa berupa pertanyaan-jawaban, pengumpulan link submisi, dan sebagainya.
       </p>
 
@@ -19,7 +19,7 @@
         <div class="col-sm-12">
           <div class="card">
             <div class="card-header">
-              <h4>Daftar Quest Kamu</h4>
+              <h4>Daftar Submisi Kamu</h4>
               <div class="card-header-action">
                 <a data-collapse="#quests-issued" class="btn btn-icon btn-warning" href="#"><i class="fas fa-minus"></i></a>
               </div>
@@ -46,9 +46,6 @@
           </div>
         </div>
       </div>
-      
-
-      
     </div>
   </section>
 @endsection

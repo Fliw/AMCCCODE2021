@@ -1,11 +1,11 @@
 @extends('app.frontend.layouts.dashboard.app')
 
-@section('title', 'Quest Detail')
+@section('title', 'Submission Detail')
 
 @section('content')
   <section class="section">
     <div class="section-header">
-    <h1>Quest: {{ $data['quest']['title'] }}</h1>
+    <h1>Submisi: {{ $data['quest']['title'] }}</h1>
     </div>
 
     <div class="section-body">
@@ -20,7 +20,7 @@
           <div class="card">
             <div class="card-body">
                 <p>
-                  <strong>Deskripsi</strong><br/>
+                  <strong>Penjelasan</strong><br/>
                   {{ $data['quest']['description'] }}
                 </p>
             </div>
@@ -42,17 +42,13 @@
               @csrf
               @method('patch')
               <div class="card-body">
-                  <p>
-                    <strong>Form Respon</strong>
-                  </p>
-
-                  <textarea class="form-control" name="response" placeholder="{{ $data['quest']['response'] ?? 'Kirim respon kamu disini' }}" @if(!$data['quest']['is_open']) readonly @endif value="{{ $data['quest']['response'] ?? '' }}" style="min-height: 75px;"></textarea>
+                  <textarea class="form-control" name="response" placeholder="{{ $data['quest']['response'] ?? 'Paste link file submisi kamu disini' }}" @if(!$data['quest']['is_open']) readonly @endif value="{{ $data['quest']['response'] ?? '' }}" style="min-height: 75px;"></textarea>
                   
                   @if($data['quest']['is_open'])
                   <br/>
                   <div class="text-right">
                     <input type="hidden" name="status" value="submitted">
-                    <button type="submit" class="btn btn-primary">Kirim Respon</button>
+                    <button type="submit" class="btn btn-primary">Kirim Submisi</button>
                   </div>
                   @endif
               </div>
@@ -63,7 +59,7 @@
           <div class="card">
             <div class="card-body">
                 <p>
-                  <strong>Diajukan</strong><br/>
+                  <strong>Diberikan Kepada Kamu</strong><br/>
                   {{ $data['quest']['date_diff'] }}
 
                   <br/>

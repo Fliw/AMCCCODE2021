@@ -1,6 +1,6 @@
 @extends('app.admin.layouts.app')
 
-@section('title', 'Quests')
+@section('title', 'Submisi')
 
 @push('base-stylesheet')
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css" />
@@ -14,7 +14,7 @@
 @section('content')
   <section class="section">
     <div class="section-header">
-      <h1>Quests</h1>
+      <h1>Submisi</h1>
       <div class="section-header-button">
         <button class="btn btn-primary btn-icon icon-left" data-toggle="modal" data-target="#modal-add">
             <i class="fas fa-plus"></i> Baru
@@ -26,7 +26,7 @@
 
       <div class="card">
         <div class="card-header">
-          <h4>Semua Quest</h4>
+          <h4>Semua Submisi</h4>
           <div class="card-header-action">
             <a data-collapse="#quest-review" class="btn btn-icon btn-warning" href="#"><i class="fas fa-minus"></i></a>
           </div>
@@ -37,7 +37,7 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Judul Quest</th>
+                  <th scope="col">Judul Submisi</th>
                   <th scope="col">Kepada Tim</th>
                   <th scope="col">Dibuat pada</th>
                   <th scope="col">Status</th>
@@ -82,7 +82,7 @@
     </div>
   </section>
 
-  <!-- Add Quest Modal -->
+  <!-- Add Submisi Modal -->
   <div class="modal fade" tabindex="-1" role="dialog" id="modal-add">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -100,11 +100,11 @@
             </div>
             <div class="form-group">
               <label for="title">Judul</label>
-              <input type="text" id="title" class="form-control" name="title" placeholder="Ketik judul quest.." required></input>
+              <input type="text" id="title" class="form-control" name="title" placeholder="Ketik judul submisi.." required></input>
             </div>
             <div class="form-group">
               <label for="description">Deskripsi</label>
-              <textarea id="description" class="form-control" name="description" placeholder="Ketik deskripsi..." style="min-height: 150px;" required></textarea>
+              <textarea id="description" class="form-control" name="description" placeholder="Ketik penjelasan..." style="min-height: 150px;" required></textarea>
             </div>
           </div>
           <div class="modal-footer bg-whitesmoke br">

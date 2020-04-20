@@ -1,15 +1,15 @@
 @extends('app.frontend.layouts.dashboard.app')
 
-@section('title', 'Newsfeed')
+@section('title', 'Berita')
 
 @section('content')
   <section class="section">
     <div class="section-header">
-      <h1>Newsfeed</h1>
+      <h1>Berita</h1>
     </div>
 
     <div class="section-body">
-      <h2 class="section-title">Newsfeed</h2>
+      <h2 class="section-title">Berita</h2>
       <p class="section-lead">
         Halaman ini berisi pembaruan berita dan informasi terbaru seputar kompetisi
         yang dikhususkan untuk semua tim
@@ -35,10 +35,7 @@
           </div>
         </div> <!-- End left column -->
         @endforeach
-
       </div>
-
-
     </div>
   </section>
 @endsection

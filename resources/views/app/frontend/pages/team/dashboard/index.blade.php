@@ -65,8 +65,8 @@
             </div>
           </div>
 
-          <h2 class="section-title" style="margin-top: 0">Quest Menunggu</h2>
-          <p class="section-lead">Quest berikut menunggu kamu untuk meresponnya</p>
+          <h2 class="section-title" style="margin-top: 0">Submisi Menunggu</h2>
+          <p class="section-lead">Permintaan submisi berikut menunggu kamu untuk meresponnya</p>
           <div class="card">
             <div class="card-body">
               <ul class="list-group">
@@ -81,7 +81,7 @@
                   @endforeach
                 @else
                   <b>Wohoo!</b>
-                  Kamu sudah menyelesaikan semua quest! Tunggu quest berikutnya ya...
+                  Kamu sudah melengkapi semua submisi! Tetap pantau untuk submisi berikutnya yaa..
                 @endif
               </ul>
             </div>
