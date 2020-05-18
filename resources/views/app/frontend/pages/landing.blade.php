@@ -10,14 +10,11 @@
 
     <link rel="stylesheet" href="{{ asset('code2020/vendors/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('code2020/vendors/fontawesome/css/all.min.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('code2020/vendors/themify-icons/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('code2020/vendors/themify-icons/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('code2020/vendors/linericon/style.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('code2020/vendors/owl-carousel/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('code2020/vendors/owl-carousel/owl.theme.default.min.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet"
-        href="{{ asset('code2020/vendors/owl-carousel/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('code2020/vendors/owl-carousel/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.8/typed.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -37,24 +34,46 @@
                 <img src="{{ asset('code2020/img/amcc.png') }}" width="120px">
             </div>
             <span class="txt">LOADING CODE...</span>
-
         </div>
     </div>
     <script>
+        //adding delayed modal
+        $(window).on('load', function() {
+            setTimeout(function(){
+                $("#modalAwal").modal('show');
+            },8000);
+        });
+        //ini opsional, kalau mau pake aktual reload yaa bisa, namun mungkin saat load pertama agak lama karna belum di cache
         $('.preloader').delay(5000).fadeOut(500);
-
     </script>
+    <!-- Modal Awal -->
+    <div class="modal fade" id="modalAwal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Announcement</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{asset('code2020/img/poster.jpg')}}" alt="poster" width="100%" class="rounded">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Oke Kak !</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end modal awal -->
     <!--================Header Menu Area =================-->
     <header class="header_area">
         <div class="main_menu">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container box_1620">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="#"><img width="100px"
-                            src="{{ asset('code2020/img/logo.png') }}" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand logo_h" href="#"><img width="100px" src="{{ asset('code2020/img/logo.png') }}" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -63,8 +82,7 @@
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav justify-content-end">
                             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link"
-                                    href="{{ route('ticket.index') }}">E-Ticket</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('ticket.index') }}">E-Ticket</a></li>
                             <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a>
                             <li class="nav-item"><a class="nav-link" href="#benefit">Benefit</a></li>
                             <li class="nav-item"><a class="nav-link" href="#lomba">Lomba</a></li>
@@ -85,8 +103,7 @@
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="hero-banner__img">
-                            <img class="img-fluid"
-                                src="{{ asset('code2020/img/banner/hero-banner.png') }}" alt="">
+                            <img class="img-fluid" src="{{ asset('code2020/img/banner/hero-banner.png') }}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-5 pt-5">
@@ -95,10 +112,8 @@
                             <div class="text-center">
                                 <p>Code Adalah Rangkaian Acara Kompetisi Antar Mobile Developer, IT Business Idea Dan Web Developer Serta
                                     Seminar Bertaraf Nasional.</p>
-                                <a class="button buttonCode"
-                                    href="{{ route('team.register') }}">Registrasi Tim</a>
-                                <a class="button buttonCode"
-                                    href="{{ route('ticket.index') }}">Seminar</a>
+                                <a class="button buttonCode" href="{{ route('team.register') }}">Registrasi Tim</a>
+                                <a class="button buttonCode" href="{{ route('ticket.index') }}">Seminar</a>
                             </div>
                         </div>
                     </div>
@@ -117,8 +132,7 @@
                         Dengan Mengusung Tema
                         <br><br>
                         <i class="warnaTextCode">"Smart Digital Technology With Code"</i>
-                        <br><img src="{{ asset('code2020/img/maskot.png') }}"
-                            width="100px"><br><br>
+                        <br><img src="{{ asset('code2020/img/maskot.png') }}" width="100px"><br><br>
                         Kita Percaya Bahwa Kita Dapat Membantu Mengembangkan Bangsa ini dengan Teknologi Smart Digital,
                         Sehingga Nantinya Indonesia Akan Menjadi Bangsa Yang Terdepan Dalam Inovasi Dunia Digital.
                         <br>Dibantu Oleh Para Pembicara Yang Ahli Dalam Bidang Teknologi, Kita Optimis Dapat Mempererat
@@ -168,20 +182,17 @@
                 <div id="lomba" class="container">
                     <h2 class="section-intro__title">Acara Yang Dilombakan</h2>
                     <div class="row mx-auto">
-                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200"
-                            style="float:none;margin:auto;">
+                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200" style="float:none;margin:auto;">
                             <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                                 <span class="card-feature__icon text-center">
-                                    <img src="{{ asset('code2020/img/android.png') }}"
-                                        width="60px">
+                                    <img src="{{ asset('code2020/img/android.png') }}" width="60px">
                                 </span>
                                 <h3 class="card-feature__title text-center">Mobile Development</h3>
                                 <p class="card-feature__subtitle text-center">Menciptakan aplikasi berbasis mobile
                                     secara kreatif dan inovatif.</p>
                             </div>
                         </div>
-                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200"
-                            style="float:none;margin:auto;">
+                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200" style="float:none;margin:auto;">
                             <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                                 <span class="card-feature__icon text-center">
                                     <img src="{{ asset('code2020/img/ide.png') }}" width="60px">
@@ -191,8 +202,7 @@
                                     memecahkan permasalahan bisnis di Indonesia.</p>
                             </div>
                         </div>
-                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200"
-                            style="float:none;margin:auto;">
+                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200" style="float:none;margin:auto;">
                             <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                                 <span class="card-feature__icon text-center">
                                     <img src="{{ asset('code2020/img/web.png') }}" width="60px">
@@ -224,8 +234,7 @@
                         </div>
                         <div class="col-md-7" data-aos="zoom-in-up">
                             <div class="about__img">
-                                <img class="img-fluid"
-                                    src="{{ asset('code2020/img/timeline.png') }}" alt="">
+                                <img class="img-fluid" src="{{ asset('code2020/img/timeline.png') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -237,8 +246,7 @@
                 <div class="panel-group" id="faqAccordion">
                     <br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                            data-parent="#faqAccordion" data-target="#question0">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question0">
                             <h2 class="text-white">FaQ (Frequently Asked Question)</h2>
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak ini kompetisinya offline ya? Sedangkan kondisi lagi
@@ -261,8 +269,7 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                            data-parent="#faqAccordion" data-target="#question1">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question1">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, uang pendaftaran kami apakah akan kembali 100%, jika
@@ -283,8 +290,7 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                            data-parent="#faqAccordion" data-target="#question2">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question2">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, kalo nanti ada peserta lomba berasal dari luar jogja,
@@ -306,8 +312,7 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                            data-parent="#faqAccordion" data-target="#question3">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question3">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, untuk mengikuti TM nanti apakah harus full team ya?
@@ -327,8 +332,7 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                            data-parent="#faqAccordion" data-target="#question4">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question4">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, apakah peserta lomba yang tidak juara juga akan
@@ -349,8 +353,7 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                            data-parent="#faqAccordion" data-target="#question5">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question5">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, untuk informasi syarat dan ketentuan nya gimana ya ?
@@ -372,8 +375,7 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                            data-parent="#faqAccordion" data-target="#question6">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question6">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, ada benefit dapet gebetan nggak?</a>
@@ -391,8 +393,7 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                            data-parent="#faqAccordion" data-target="#question7">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question7">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, apakah boleh jika hanya mengikuti lomba saja, tapi
@@ -413,8 +414,7 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                            data-parent="#faqAccordion" data-target="#question8">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question8">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Rangkaian acaranya berlangsung berapa hari ya Kak?
@@ -433,8 +433,7 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                            data-parent="#faqAccordion" data-target="#question9">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question9">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak kalo misal program yang sudah dibuat tapi pas hari H
@@ -455,8 +454,7 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                            data-parent="#faqAccordion" data-target="#question10">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question10">
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak yang mempengaruhi faktor penilaiannya apa saja ya?
 
@@ -476,8 +474,7 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
-                            data-parent="#faqAccordion" data-target="#question11">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question11">
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak untuk yang kategori IT Business apakah harus bisnis
                                     yang sudah berjalan?
@@ -522,11 +519,8 @@
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
-
                             </script> All rights reserved <br>
-                            <p style="color:#0e1424">| This template is made with <i class="fa fa-heart"
-                                    aria-hidden="true"></i> by <a style="color:#0e1424" href="https://colorlib.com"
-                                    target="_blank">Colorlib</a>
+                            <p style="color:#0e1424">| This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a style="color:#0e1424" href="https://colorlib.com" target="_blank">Colorlib</a>
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                     </div>
@@ -546,7 +540,6 @@
                 backDelay: 2000,
                 loop: true
             });
-
         </script>
         <!-- ================ End footer Area ================= -->
         <script src="{{ asset('code2020/vendors/bootstrap/bootstrap.bundle.min.js') }}">
