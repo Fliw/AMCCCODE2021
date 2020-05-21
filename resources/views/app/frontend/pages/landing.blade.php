@@ -43,8 +43,10 @@
                 $("#modalAwal").modal('show');
             },8000);
         });
-        //ini opsional, kalau mau pake aktual reload yaa bisa, namun mungkin saat load pertama agak lama karna belum di cache
-        $('.preloader').delay(5000).fadeOut(500);
+
+        $(document).ready(function () {
+            $('.preloader').fadeOut(500);
+        });
     </script>
     <!-- Modal Awal -->
     <div class="modal fade" id="modalAwal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -87,6 +89,7 @@
                             <li class="nav-item"><a class="nav-link" href="#benefit">Benefit</a></li>
                             <li class="nav-item"><a class="nav-link" href="#lomba">Lomba</a></li>
                             <li class="nav-item"><a class="nav-link" href="#tanggal">Tanggal</a></li>
+                            <li class="nav-item"><a class="nav-link btn btn-outline-warning" href="http://bit.ly/rulebookCODE2020" target="_blank">Rulebook Lomba</a></li>
                         </ul>
                     </div>
                 </div>
@@ -173,11 +176,33 @@
                                     Event Ini, Selain Itu Kalian Pun Dapat Mengimprovisasi Skill Teamwork Kalian.</p>
                             </div>
                         </div>
+                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
+                            <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
+                                <span class="card-feature__icon">
+                                    <img src="{{ asset('code2020/img/productive.png') }}" width="60px">
+                                </span>
+                                <h3 class="card-feature__title">Lebih Produktif</h3>
+                                <p class="card-feature__subtitle">
+                                    Dengan dirumah aja, kalian bisa lebih produktif menggali kemampuan-mu
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
+                            <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
+                                <span class="card-feature__icon">
+                                    <img src="{{ asset('code2020/img/challenge.png') }}" width="60px">
+                                </span>
+                                <h3 class="card-feature__title">Tantangan Baru</h3>
+                                <p class="card-feature__subtitle">
+                                    Tantangan ini adalah hal yang baru yang dimana competition ini dilakukan secara online
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section>
+        <section style="margin-bottom: 64px;">
             <center>
                 <div id="lomba" class="container">
                     <h2 class="section-intro__title">Acara Yang Dilombakan</h2>
@@ -258,32 +283,8 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
 
-                                <p>Halo sobat CODE 2020. Kami optimis kalau pandemik ini akan usai secepatnya. Jadi,
-                                    kita tetap mengadakannya secara offline sobat.
-                                    Tapi, tenang aja ya...
-                                    Ketika nanti wabah ini belum usai, uang pendaftaran sobat Code 2020 akan
-                                    dikembalikan kok. :)
-
-                                </p>
-                            </div>
-                        </div>
-                    </div><br>
-                    <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question1">
-
-                            <h4 class="panel-title">
-                                <a class="ing text-white">Q: Kak, uang pendaftaran kami apakah akan kembali 100%, jika
-                                    ada suatu halangan?
-                                </a>
-                            </h4>
-
-                        </div>
-                        <div id="question1" class="panel-collapse collapse" style="height: 0px;">
-                            <div class="panel-body">
-                                <h5><span class="label label-primary text-white">Answer</span></h5>
-
-                                <p>Halo sobat CODE 2020, tentu saja kami akan mengembalikan uang pendaftaran peserta
-                                    100%. Jika ada suatu halangan dan sobat sudah konfirmasi ke kami. :)
+                                <p>Halo sobat CODE 2020,untuk sementara kita offline ya kak, jika nanti pandemi ini di 
+                                perpanjang melebihi timeline, maka kami akan merubah menjadi online competition.
 
                                 </p>
                             </div>
@@ -303,10 +304,10 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
 
-                                <p> Halo sobat CODE 2020. Maaf ya, untuk saat ini kami tidak menyediakan paket
+                                <p> 
+                                    Halo sobat CODE 2020. Maaf ya, untuk saat ini kami tidak menyediakan paket
                                     transportasi penjemputan dan penginapan. Tetapi kami sudah memberikan rekomendasi
                                     untuk penginapannya kok. :)
-
                                 </p>
                             </div>
                         </div>
@@ -324,9 +325,10 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
 
-                                <p>Halo sobat CODE 2020, untuk mengikuti TM boleh perwakilan dari team yaaa. Tetapi
-                                    diusahakan full team yaa sobat. :)
-
+                                <p>
+                                    Halo sobat CODE 2020, untuk mengikuti TM boleh perwakilan dari team yaaa. 
+                                    Tetapi diusahakan full team yaa sobat. :), untuk TM akan di lakukan melalui media 
+                                    conference ya kak, nanti panitia akan meng-infokan.
                                 </p>
                             </div>
                         </div>
@@ -345,9 +347,9 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
 
-                                <p>Halo sobat CODE 2020, untuk semua peserta nanti akan mendapatkan sertifikat sebagai
-                                    partisipan yaaa. :)
-
+                                <p>
+                                    Halo sobat CODE 2020, Jadi untuk peserta yang gagal menuju tahap selanjutnya
+                                    akan mendapatkan e-sertifikat, dengan catatan peserta harus lolos ditahap2 (submit video).
                                 </p>
                             </div>
                         </div>
@@ -406,9 +408,9 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
 
-                                <p> Halo sobat CODE 2020, jika hanya mengikuti lomba saja diperbolehkan kok. Silahkan
-                                    tunggu informasi selanjutnya yaah. :)
-
+                                <p>
+                                    Halo sobat CODE 2020, Seminar nasional merupakan fasilitas bagi peserta lomba 
+                                    yang lolos menuju tahap semifinal ( submit video ). Silahkan tunggu informasi selanjutnya ya kak :) 
                                 </p>
                             </div>
                         </div>
@@ -446,9 +448,16 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
 
-                                <p>Halo sobat CODE 2020, diusahakan harus selesai yah sobat karena akan ditampilkan saat
-                                    pitching nanti.
-
+                                <p>
+                                    Halo sobat CODE 2020, diusahakan harus selesai yah sobat, karena pada proposal 
+                                    peserta diwajibkan menyantumkan implementasi aplikasi. 
+                                    Jadi Implementasi aplikasi itu semacam prototype / produk hasil jadi.
+                                    <br/><br/>
+                                    Sesuai ketentuan, jika itu kategori mobile dan web ( diharapkan juga menyantumkan hasil produk jadi si aplikasi itu ), 
+                                    namun jika kategori IT Business ( bisa menyantumkan prototype produk itu).
+                                    <br/><br/>
+                                    Nah untuk pertanyaan, apakah aplikasi itu harus sudah selesai saat pengumpulan proposal? 
+                                    Itu lebih bagus lagi, karena produk yang di implementasikan didalam proposal itu sudah matang.
                                 </p>
                             </div>
                         </div>
@@ -476,11 +485,10 @@
                     <div class="panel panel-default ">
                         <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question11">
                             <h4 class="panel-title">
-                                <a class="ing text-white">Q: Kak untuk yang kategori IT Business apakah harus bisnis
-                                    yang sudah berjalan?
+                                <a class="ing text-white">
+                                    Q: Kak untuk yang kategori IT Business apakah harus bisnis yang sudah berjalan?
                                 </a>
                             </h4>
-
                         </div>
                         <div id="question11" class="panel-collapse collapse" style="height: 0px;">
                             <div class="panel-body">
@@ -493,7 +501,104 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div><br>
+                    <div class="panel panel-default ">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question12">
+                            <h4 class="panel-title">
+                                <a class="ing text-white">
+                                    Q: Min, rulebooknya apakah ada perubahan isi ya? karena acara yang berubah juga jadi Online Competition?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="question12" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary text-white">Answer</span></h5>
+                                <p>
+                                    Halo sobat CODE 2020, iyap betul sekali. <br/>
+                                    Rulebook online sedang dalam proses ya sobat. 
+                                    Tetap pantau IG AMCC (<a href="https://instagram.com/amccamikom" target="_blank">@amccamikom</a>) secara berkala 
+                                    untuk mengetahui informasi update-an selanjutnya :)
+                                </p>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="panel panel-default ">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question13">
+                            <h4 class="panel-title">
+                                <a class="ing text-white">
+                                    Q: Min, link media conferencenya apakah akan dicantumkan di rulebook ya?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="question13" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary text-white">Answer</span></h5>
+                                <p>
+                                    Hallo Sobat CODE 2020, untuk link nya tidak kami share melalui rulebook ya Sobat.. 
+                                    Jadi, nanti link media conference akan kami infokan pada peserta lomba yang sudah lolos di tahap 2 (submit video) yak :)
+                                </p>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="panel panel-default ">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question14">
+                            <h4 class="panel-title">
+                                <a class="ing text-white">
+                                    Q: Min, nanti jika peserta lomba gagal menuju tahap selanjutnya, apakah juga tetap mendapatkan fasilitas Seminar Nasional ya?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="question14" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary text-white">Answer</span></h5>
+                                <p>
+                                    Hallo Sobat CODE 2020, untuk fasilitas SEMNAS hanya diperuntukkan bagi 
+                                    peserta lomba yang sudah lolos di tahap 2 (submit video) yak :).. 
+                                    Jadi untuk peserta lomba yang gagal menuju tahap selanjutnya dan menginginkan 
+                                    untuk join acara SEMNAS, bisa mendaftarkan diri sebagai peserta seminar nasional pada link 
+                                    yang tertera di poster semnas. 
+                                    Cek informasi secara berkala di IG AMCC (<a href="https://instagram.com/amccamikom" target="_blank">@amccamikom</a>) ya sobat :)
+                                </p>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="panel panel-default ">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question15">
+                            <h4 class="panel-title">
+                                <a class="ing text-white">
+                                    Q: Min, nanti model pitchingnya itu seperti apa ya min? kan acara kita online nih?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="question15" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary text-white">Answer</span></h5>
+                                <p>
+                                    Hallo Sobat CODE 2020, nah untuk pitchingnya nanti tiap tim akan presentasi langsung didepan juri, 
+                                    dengan menyalakan kamera media conference. Karena kita ada 3 kategori lomba, 
+                                    jadi nanti pitching dilakukan pada link media conference berdasarkan kategori lomba yang akan panitia infokan.
+                                </p>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="panel panel-default ">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question16">
+                            <h4 class="panel-title">
+                                <a class="ing text-white">
+                                    Q: Min, kalau pitching sinyal buruk bagaimana ya?
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="question16" class="panel-collapse collapse" style="height: 0px;">
+                            <div class="panel-body">
+                                <h5><span class="label label-primary text-white">Answer</span></h5>
+                                <p>
+                                    Hallo Sobat CODE 2020, panitia berharap untuk koneksinya dipastikan aman ya sobat :) 
+                                    Tapi jangan naik tower ya sobat.. Keselamatan tetap nomor 1
+                                </p>
+                            </div>
+                        </div>
+                    </div><br>
 
                 </div>
                 <!--/panel-group-->
