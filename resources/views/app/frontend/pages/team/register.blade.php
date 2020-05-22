@@ -55,9 +55,20 @@
                     <!-- Welcome Message -->
                     <div class="tab-pane fade show active text-center" id="team-step-0" role="tabpanel">
                       <h5 style="color: #6777ef">Selamat datang Innovator!</h5><br/>
-
-                      <a href="{{ route('team.login') }}" class="btn btn-light">Login Dashboard Tim</a>
-                      <a href="#team-step-1" class="btn btn-primary btn-icon icon-right" data-toggle="tab" role="tab">Mulai Registrasi Tim <i class="fas fa-arrow-right"></i></a>
+                      
+                      <p style="text-align: left">
+                        Berikut adalah beberapa tips sebelum teman-teman mulai registrasi:<br/>
+                        1. CODE 2020 (untuk saat ini) adalah kompetisi yang hanya ditujukan untuk mahasiswa/i dari <strong>perguruan tinggi</strong> (negeri maupun swasta).
+                        <br/>
+                        2. Sudah menentukan kategori yang ingin diikuti? sudah membaca rulebooknya? pastikan teman-teman sudah yaa :)
+                        kalau belum bisa mengaksesnya disini <a href="http://bit.ly/rulebookCODE2020" target="_blank"><strong>[ Link Rulebook ]</strong></a>.
+                        <br/>
+                        3. Jika teman-teman mempunyai pertanyaan, mungkin akan menemukan jawabannya di <a href="https://code.amcc.or.id/#faqAccordion" target="_blank"><strong>[ Halaman FAQ ]</strong></a> ;)<br/>
+                        4. Tetap semangat dan produktif &#128170;
+                      </p>
+                      <br/>
+                      <hr>
+                      <a href="#team-step-1" class="btn btn-primary btn-icon icon-right" data-toggle="tab" role="tab">Oke, Mengerti! <i class="fas fa-arrow-right"></i></a>
                     </div>
 
                     <!-- First Step -->
@@ -194,6 +205,13 @@
                           </div>
                         </div>
                       </div>
+
+                      <p style="line-height: 1.8">
+                        *) Setelah klik <strong>Selesaikan Registrasi</strong>, kamu akan diarahkan ke dashboard tim kamu.<br/>
+                        Dashboard ini bisa kamu digunakan untuk berbagai kebutuhan tim. 
+                        Mulai dari pengiriman submisi, mendapatkan informasi dan bantuan, hingga melihat status administrasi. 
+                        Pastikan selalu dipantau terus yaa.<br/>
+                      </p>
 
                       <hr>
                       <div class="row">
