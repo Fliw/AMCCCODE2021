@@ -11,6 +11,7 @@
     <li class="{{ request()->is('admin/newsfeeds') ? 'active' : '' }}"><a href="{{ route('admin.newsfeeds.index') }}"><i class="fas fa-bullhorn"></i> <span>Berita</span></a></li>
     <li class="{{ request()->is('admin/payments') ? 'active' : '' }}"><a href="{{ route('admin.payments.index') }}"><i class="fas fa-dollar-sign"></i> <span>Pembayaran</span></a></li>
     <li class="{{ request()->is('admin/schedules') ? 'active' : '' }}"><a href="{{ route('admin.schedules.index') }}"><i class="fas fa-calendar"></i> <span>Jadwal</span></a></li>
+    <li class="{{ request()->is('admin/attendees') ? 'active' : '' }}"><a href="{{ route('admin.attendees.index') }}"><i class="fas fa-user"></i> <span>Peserta</span></a></li>
     <li class="{{ request()->is('admin/teams') ? 'active' : '' }}"><a href="{{ route('admin.teams.index') }}"><i class="fas fa-user"></i> <span>Tim</span></a></li>
     <li class="{{ request()->is('admin/quests') ? 'active' : '' }}"><a href="{{ route('admin.quests.index') }}"><i class="fas fa-exclamation-triangle"></i> <span>Submisi</span></a></li>
     <li class="menu-header">Admin</li>
