@@ -11,6 +11,13 @@ class Team extends Model
     protected $casts = [
         'members' => 'array'
     ];
+
+    protected $guarded = ['id'];
+
+    public function setMembersAttribute(array $value)
+    {
+        $this->attributes['members'] = json_encode($value);
+    }
     
     public function category()
     {

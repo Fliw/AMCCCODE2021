@@ -35,6 +35,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('/competitioncategories', 'CompetitionCategoryController')->except('create', 'show');
         Route::resource('/events', 'EventController')->except('create', 'show');
         Route::resource('/paymentmethods', 'PaymentMethodController')->except('create', 'show');
+        Route::resource('/teams', 'TeamController')->except('create', 'show');
     });
 });
 

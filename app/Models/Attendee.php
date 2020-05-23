@@ -12,6 +12,8 @@ class Attendee extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $guarded = ['id'];
+
     protected $appends = [
         'first_name'
     ];
