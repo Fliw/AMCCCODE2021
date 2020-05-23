@@ -25,7 +25,8 @@ class EventUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:3',
-            'description' => 'nullable|string'
+            'description' => 'nullable|string',
+            'published' => 'required|boolean'
         ];
     }
 }

@@ -14,6 +14,7 @@
     <li class="{{ request()->is('admin/attendees') ? 'active' : '' }}"><a href="{{ route('admin.attendees.index') }}"><i class="fas fa-user"></i> <span>Peserta</span></a></li>
     <li class="{{ request()->is('admin/teams') ? 'active' : '' }}"><a href="{{ route('admin.teams.index') }}"><i class="fas fa-user"></i> <span>Tim</span></a></li>
     <li class="{{ request()->is('admin/quests') ? 'active' : '' }}"><a href="{{ route('admin.quests.index') }}"><i class="fas fa-exclamation-triangle"></i> <span>Submisi</span></a></li>
+    <li class="{{ request()->is('admin/events') ? 'active' : '' }}"><a href="{{ route('admin.events.index') }}"><i class="fas fa-list-alt"></i> <span>Event</span></a></li>
     <li class="menu-header">Admin</li>
     <li class="{{ request()->is('admin/accounts') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.accounts.index') }}"><i class="fas fa-user"></i> <span>Akun</span></a></li>
     <li class="{{ request()->is('admin/configs') ? 'active' : '' }}"><a href="{{ route('admin.configs.index') }}"><i class="fas fa-cogs"></i> <span>Konfigurasi</span></a></li>

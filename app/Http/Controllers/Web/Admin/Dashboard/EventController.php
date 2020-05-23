@@ -18,7 +18,7 @@ class EventController extends Controller
     public function index()
     {
         $data['session'] = Auth::user()->toArray();
-        $data['events'] = Event::all();
+        $data['events'] = Event::all()->toArray();
 
         return view('app.admin.pages.event.index', compact('data'));
     }
