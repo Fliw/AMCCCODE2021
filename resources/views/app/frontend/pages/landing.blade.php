@@ -274,18 +274,19 @@
                         <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question0">
                             <h2 class="text-white">FaQ (Frequently Asked Question)</h2>
                             <h4 class="panel-title">
-                                <a class="ing text-white">Q: Kak ini kompetisinya offline ya? Sedangkan kondisi lagi
-                                    pandemik COVID-19.</a>
+                                <a class="ing text-white">
+                                    Q: Kak, kompetisi CODE ini dilaksanakan secara online atau offline?
+                                </a>
                             </h4>
 
                         </div>
                         <div id="question0" class="panel-collapse collapse" style="height: 0px;">
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
-
-                                <p>Halo sobat CODE 2020,untuk sementara kita offline ya kak, jika nanti pandemi ini di 
-                                perpanjang melebihi timeline, maka kami akan merubah menjadi online competition.
-
+                                <p>
+                                    Halo sobat CODE! dikarenakan adanya himbauan darurat COVID-19 
+                                    dari pemerintah membuat kita tidak dapat berjumpa secara langsung, 
+                                    sehingga keseluruhan acara CODE 2020 akan dilaksanakan secara online.
                                 </p>
                             </div>
                         </div>
