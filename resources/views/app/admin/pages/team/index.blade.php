@@ -45,6 +45,9 @@
                         <a href="{{ route('admin.teams.edit', ['team' => $team['id']]) }}" class="btn btn-sm btn-warning btn-icon">
                           <i class="fas fa-check"></i> Edit
                         </a>
+                        <a href="{{ chatWa($team['leader']['whatsapp']) }}" target="_blank" class="btn btn-sm btn-success btn-icon">
+                          <i class="fab fa-whatsapp"></i> Chat WA
+                        </a>
                         <form action="{{ route('admin.teams.destroy', ['team' => $team['id']]) }}" method="POST">
                           @csrf
                           @method('delete')
