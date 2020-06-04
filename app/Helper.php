@@ -21,6 +21,6 @@ if (! function_exists('chatWa')) {
             $phone = '62' . substr($phone, 1);
         }
 
-        return "https://web.whatsapp.com/send?phone={$phone}";
+        return "https://api.whatsapp.com/send?phone={$phone}";
     }
 }
