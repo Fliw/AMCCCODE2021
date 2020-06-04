@@ -46,15 +46,15 @@
                           <i class="fas fa-check"></i> Edit
                         </a>
                         <a href="{{ chatWa($team['leader']['whatsapp']) }}" target="_blank" class="btn btn-sm btn-success btn-icon">
-                          <i class="fab fa-whatsapp"></i> Chat WA
+                          <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
-                        <form action="{{ route('admin.teams.destroy', ['team' => $team['id']]) }}" method="POST">
+                        {{-- <form action="{{ route('admin.teams.destroy', ['team' => $team['id']]) }}" method="POST">
                           @csrf
                           @method('delete')
                           <button type="submit" class="btn btn-sm btn-outline-danger btn-icon">
                             <i class="fas fa-trash"></i>
                           </button>
-                        </form>
+                        </form> --}}
                       </div>
                     </td>
                   </tr>
