@@ -27,6 +27,11 @@ class Event extends Model
         } 
     }
 
+    public function schedules()
+    {
+        return $this->hasMany(Schedule::class);
+    }
+
     public function tickets()
     {
         return $this->belongsToMany('App\Models\Ticket')

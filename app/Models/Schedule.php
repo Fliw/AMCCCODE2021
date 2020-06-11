@@ -19,7 +19,8 @@ class Schedule extends Model
     protected $appends = [
         'status',
         'from_short',
-        'to_short'
+        'to_short',
+        'is_accessible'
     ];
 
     public function getStatusAttribute()
@@ -35,6 +36,11 @@ class Schedule extends Model
         } else if ($now->greaterThan($finish)) {
             return ['element' => 'secondary', 'message' => 'Done'];
         }
+    }
+
+    public function getIsAccessibleAttribute()
+    {
+        return now()->between($this->from, $this->to);
     }
 
     public function getFromShortAttribute()

@@ -8,6 +8,8 @@ class Presence extends Model
 {
     protected $table = 'presences';
 
+    protected $guarded = ['id'];
+
     public function attendee()
     {
         return $this->belongsTo('App\Models\Attendee');

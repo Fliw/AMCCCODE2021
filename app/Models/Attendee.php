@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Exception;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Str;
 
 class Attendee extends Authenticatable
 {
@@ -17,6 +19,19 @@ class Attendee extends Authenticatable
     protected $appends = [
         'first_name'
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            try {
+                $model->entry_token = Str::random(16);
+            } catch (Exception $ex) {
+                $model->entry_token = Str::random(16);
+            }
+        });
+    }
 
     public function getFirstNameAttribute()
     {
@@ -36,5 +51,12 @@ class Attendee extends Authenticatable
     public function team()
     {
         return $this->hasOne('App\Models\Team', 'leader_id');
+    }
+
+    public function getEntries()
+    {
+        return $this->load([
+            'payments.ticket.events.schedules'
+        ])->payments->where('paid', true)->pluck('ticket');
     }
 }
