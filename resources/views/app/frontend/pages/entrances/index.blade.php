@@ -31,7 +31,7 @@
                 <div class="card-body">
                     Hai, <strong>Rohmad Fajarudin</strong>!<br>
                     Ini adalah halaman untuk mengakses link acara yang ingin kamu ikuti. 
-                    Link dapat diakses ketika telah dibuka sesuai jamnya. 
+                    Link dapat diakses (diklik) ketika telah dibuka sesuai jadwalnya. 
                     Dengan mengakses acara melalui halaman ini, kamu akan ditandai mengikuti 
                     acara dan akan diarahkan menuju link acara tersebut.
                     <br/><br/>
@@ -47,7 +47,7 @@
                             @foreach ($entry->events as $event)
                                 <div class="list-group">
                                     @foreach ($event->schedules as $schedule)
-                                        <a href="{{ route('entrances.redirect', ['token' => $token, 'schedule' => $schedule]) }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                        <a @if($schedule->is_accessible) href="{{ route('entrances.redirect', ['token' => $token, 'schedule' => $schedule]) }}" @endif @if(! $schedule->is_accessible) style="color: #bbb" @endif class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="d-flex w-100 justify-content-between">
                                                 <p style="font-weight: bold" class="mb-1">{{ $event->name }}</p>
                                                 <small><span class="badge badge-{{ $schedule['status']['element'] }}">{{ $schedule['status']['message'] }}</span></small>
