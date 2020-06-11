@@ -29,7 +29,7 @@
               <form action="{{ route('team.auth') }}" method="POST">
                 @csrf
                 <div class="card-body">
-                    Hai, <strong>{{ ucwords($data['attendee']->name) }}</strong> ({{ strtolower($data['attendee']->email) }})<br>
+                    Hai, <strong>{{ ucwords($data['attendee']->name) }}</strong><br>
                     Ini adalah halaman untuk mengakses link acara yang ingin kamu ikuti. 
                     Link dapat diakses (diklik) ketika telah dibuka sesuai jadwalnya. 
                     Dengan mengakses acara melalui halaman ini, kamu akan ditandai mengikuti 
