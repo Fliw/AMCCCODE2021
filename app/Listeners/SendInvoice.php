@@ -26,6 +26,7 @@ class SendInvoice
         $data['invoice']['amount'] = $payment->amount;
         $data['invoice']['due'] = $payment->due->format('d F Y H:i');
         $data['invoice']['helpdesk'] = Helpdesk::confirmation()->firstOrFail();
+        $data['invoice']['confirmation_url'] = $data['invoice']['helpdesk']['target'] . "%0AKode%20Invoice%3A%20%23{$payment->invoice_id}";
         $data['method']['name'] = $payment->method->name;
         $data['method']['number'] = $payment->method->number;
         $data['method']['holder'] = $payment->method->holder;
