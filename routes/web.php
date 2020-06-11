@@ -46,6 +46,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
  * ---------------------------------------------------------------------------------------
 */
 Route::get('/', 'Web\Frontend\HomeController@landing')->name('home.landing');
+Route::get('/entrances/{token}', 'Web\Frontend\EntranceController@index')->name('entrances.index');
+Route::get('/entrances/{token}/{schedule}', 'Web\Frontend\EntranceController@redirect')->name('entrances.redirect');
 
 Route::prefix('tickets')->name('ticket.')->namespace('Web\Frontend')->group(function () {
     Route::get('/', 'TicketController@index')->name('index');
