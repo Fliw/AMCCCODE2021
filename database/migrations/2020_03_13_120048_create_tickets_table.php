@@ -19,7 +19,7 @@ class CreateTicketsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('slug', 50);
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->unsignedDecimal('price');
             $table->unsignedInteger('stock');
             $table->boolean('buyable')->default(false);
