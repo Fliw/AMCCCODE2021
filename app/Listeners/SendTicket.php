@@ -23,8 +23,9 @@ class SendTicket
         $data['attendee']['identity'] = $payment->attendee->identity;
         $data['attendee']['institution'] = $payment->attendee->institution;
         $data['ticket'] = $payment->ticket->name;
-        $data['qr']['code'] = $payment->id;
-        $data['qr']['dimension'] = getConfig('qr-dimension');
+        $data['entrance_url'] = route('entrances.index', [
+            'token' => $payment->attendee->entry_token
+        ]);
         
         return $data;
     }

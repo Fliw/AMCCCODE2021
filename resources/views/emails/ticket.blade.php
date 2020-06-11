@@ -2,9 +2,8 @@
 # E-Ticket {{ config('app.name') }}
 
 Terima kasih Anda telah menyelesaikan pembayaran.  
-Berikut kami lampirkan kode QR E-Ticket Anda. Mohon untuk menyimpan email ini 
-dan tunjukkan email dan kode QR ini kepada panitia setiap ingin memasuki ruangan 
-sebagai presensi dan bukti bahwa Anda mempunyai akses ke acara tersebut.
+Berikut kami sertakan link untuk mengakses semua acara yang akan Anda ikuti. 
+Mohon diperhatikan bahwa acara hanya dapat diakses ketika sudah memasuki waktunya.
   
 **Ticket Holder:**  
 - Nama Lengkap: {{ $data['attendee']['name'] }}  
@@ -14,12 +13,9 @@ sebagai presensi dan bukti bahwa Anda mempunyai akses ke acara tersebut.
 **E-Ticket:**  
 - {{ $data['ticket'] }}<br>
   
-{{-- TODO: Extract this as a reusable component --}}
-<table class="panel" width="100%" cellpadding="0" cellspacing="0" role="presentation">
-<hr>
-<img src="https://chart.googleapis.com/chart?cht=qr&chld=H|0&chs={{ $data['qr']['dimension'] }}x{{ $data['qr']['dimension'] }}&chl={{ $data['qr']['code'] }}">
-<hr>
-</table>
+@component('mail::button', ['url' => $data['entrance_url']])
+Akses Acara
+@endcomponent
   
 Selamat mengikuti semua kegiatannya :)  
   
