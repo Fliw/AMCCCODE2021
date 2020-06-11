@@ -28,6 +28,7 @@ class TicketOrderRequest extends FormRequest
             'order.ticket_id'       => 'required|numeric|min:1',
             'order.amount'          => 'required|string',
             'order.method_id'       => 'required|numeric|min:1',
+            'order.amount'          => 'required|numeric|min:15000',
             'attendee'              => 'required|array',
             'attendee.identity'     => 'required|string',
             'attendee.name'         => 'required|string|min:3',

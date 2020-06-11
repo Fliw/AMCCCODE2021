@@ -33,6 +33,7 @@ class TicketController extends Controller
         }
 
         $data['ticket'] = $ticket->load('events')->toArray();
+        $data['ticket_price'] = filter_var($ticket->price, FILTER_SANITIZE_NUMBER_INT);
         $data['payment_methods'] = PaymentMethod::whereUsable(true)->get()->toArray();
 
         return view('app.frontend.pages.tickets.form', compact('data'));

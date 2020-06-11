@@ -36,7 +36,7 @@ class AttendeeService
     public function buyTicket(array $data)
     {
         $ticket = Ticket::findOrFail($data['ticket_id']);
-        $amount = filter_var($ticket->price, FILTER_SANITIZE_NUMBER_INT);
+        $amount = $data['amount'] ?? filter_var($ticket->price, FILTER_SANITIZE_NUMBER_INT);
         
         $payment = new Payment;
         $payment->attendee_id = $this->attendee->id;

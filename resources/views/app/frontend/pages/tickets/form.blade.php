@@ -56,12 +56,19 @@
               </div>
               <div class="col-sm-12 col-md-6">
                 <h6>Subtotal</h6>
-                <table style="table-layout: fixed; width: 100%">
-                  <tr>
-                    <td>x1 {{ $data['ticket']['name'] }}</td>
-                    <td style="text-align:right"><strong>{{ $data['ticket']['price'] }}</strong></td>
-                  </tr>
-                </table>
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <span style="display: inline-block">x1 {{ $data['ticket']['name'] }}</span>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                      <input type="number" class="form-control @error('order.amount') is-invalid @enderror" name="order[amount]" min="{{ $data['ticket_price'] }}" value="{{ old('order.amount') ?? $data['ticket_price'] }}"/>
+                      <div class="invalid-feedback">
+                        {{ $errors->first('order.amount') }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <hr>
                 <h6>Metode Pembayaran</h6>
                 @foreach ($data['payment_methods'] as $method)
