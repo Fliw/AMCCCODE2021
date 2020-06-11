@@ -17,10 +17,11 @@ class EntranceController extends Controller
      */
     public function index(string $token)
     {
-        $attendee = Attendee::where('entry_token', $token)->firstOrFail();
-        $entries = $attendee->getEntries()->sortByDesc('events.schedules.from');
+        $data['token'] = $token;
+        $data['attendee'] = $attendee = Attendee::where('entry_token', $token)->firstOrFail();
+        $data['entries'] = $attendee->getEntries()->sortByDesc('events.schedules.from');
         
-        return view('app.frontend.pages.entrances.index', compact('entries', 'token'));
+        return view('app.frontend.pages.entrances.index', compact('data'));
     }
 
     /**
