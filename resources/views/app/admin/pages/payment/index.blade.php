@@ -23,6 +23,7 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
+                  <th scope="col">Invoice ID</th>
                   <th scope="col">Nama Lengkap</th>
                   <th scope="col">Produk</th>
                   <th scope="col">Harga</th>
@@ -36,6 +37,7 @@
                 @foreach ($data['payments'] as $payment)
                   <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
+                    <th>#{{ $payment['invoice_id'] }}</th>
                     <td>{{ $payment['attendee']['name'] }}</td>
                     <td>{{ $payment['ticket']['name'] }}</td>
                     <td>{{ $payment['amount'] }}</td>
