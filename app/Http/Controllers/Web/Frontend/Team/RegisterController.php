@@ -19,6 +19,11 @@ class RegisterController extends Controller
 
     public function index()
     {
+        if (getConfig('team.registration.open') == false) {
+            return redirect()->route('team.login')
+                ->with('error', 'Mohon maaf, pendaftaran tim sudah ditutup. Kamu masih dapat mengirimkan submisi dengan masuk ke Dashboard Tim.');
+        }
+
         $data['categories'] = CompetitionCategory::get(['id', 'name']);
         
         return view('app.frontend.pages.team.register', compact('data'));
