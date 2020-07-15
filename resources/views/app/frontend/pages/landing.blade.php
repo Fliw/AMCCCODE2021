@@ -38,11 +38,11 @@
     </div>
     <script>
         //adding delayed modal
-        $(window).on('load', function() {
-            setTimeout(function(){
-                $("#modalAwal").modal('show');
-            },8000);
-        });
+        // $(window).on('load', function() {
+        //     setTimeout(function(){
+        //         $("#modalAwal").modal('show');
+        //     },8000);
+        // });
 
         $(document).ready(function () {
             $('.preloader').fadeOut(500);
@@ -115,8 +115,8 @@
                             <div class="text-center">
                                 <p>Code Adalah Rangkaian Acara Kompetisi Antar Mobile Developer, IT Business Idea Dan Web Developer Serta
                                     Seminar Bertaraf Nasional.</p>
-                                <a class="button buttonCode" href="{{ route('team.register') }}">Registrasi Tim</a>
-                                <a class="button buttonCode" href="{{ route('ticket.index') }}">Seminar</a>
+                                <a class="button buttonCode" href="{{ route('team.login') }}">Login Dashboard Tim</a>
+                                <a class="button buttonCode" href="/tickets/seminar-nasional">Daftar Seminar</a>
                             </div>
                         </div>
                     </div>
@@ -247,7 +247,7 @@
         <!--================ about section end =================-->
 
         <!-- ================ start footer Area ================= -->
-        <footer class="footer-area section-gap">
+        <footer class="footer-area section-gap" style="padding-bottom: 0">
             <section id="tanggal" class="section-padding--small">
                 <div class="container">
                     <div class="row no-gutters align-items-center">
@@ -605,21 +605,32 @@
                 <!--/panel-group-->
             </div>
 
+            <div class="mediasponsor section-gap" style="background: #fff; width: 100%; padding: 24px 0 24px 0; margin-top: 48px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <h4 style="margin-bottom: 16px;">Sponsored by</h4>
+                            <img src="{{ asset('code2020/img/sponsor/niagahoster.png') }}" width="96" />
+                            <img src="{{ asset('code2020/img/sponsor/citranet.png') }}" width="96" />
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <h4 style="margin-bottom: 16px;">Media Partner</h4>
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/1.png') }}" width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/2.png') }}" width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/3.jpg') }}" width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/4.png') }}" width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/5.png') }}" width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/6.png') }}" width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/7.png') }}" width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/8.png') }}" width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/9.png') }}" width="48" />
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <br>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 mb-5 mb-md-0">
-                        <div class="about__content">
-                            <h2 class="text-white">Sponsor</h2>
-                            <p>Acara ini Didukung Oleh :</p>
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="about__img text-center">
-                            <img src="{{ asset('code2020/img/logo.png') }}" width="300px">
-                        </div>
-                    </div>
                     <div class="footer-bottom row align-items-center text-center text-lg-left">
                         <p class="footer-text m-0 col-lg-8 col-md-12">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -631,6 +642,7 @@
                             </p>
                     </div>
                 </div>
+            </div>
         </footer>
         <script type="text/javascript">
             AOS.init();
