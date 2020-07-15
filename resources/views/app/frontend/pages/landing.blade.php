@@ -617,7 +617,7 @@
                             <h4 style="margin-bottom: 16px;">Media Partner</h4>
                             <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/1.png') }}" width="48" />
                             <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/2.png') }}" width="48" />
-                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/3.jpg') }}" width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/3.png') }}" width="48" />
                             <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/4.png') }}" width="48" />
                             <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/5.png') }}" width="48" />
                             <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/6.png') }}" width="48" />
