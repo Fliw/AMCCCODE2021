@@ -610,8 +610,9 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <h4 style="margin-bottom: 16px;">Sponsored by</h4>
-                            <img src="{{ asset('code2020/img/sponsor/niagahoster.png') }}" width="96" />
-                            <img src="{{ asset('code2020/img/sponsor/citranet.png') }}" width="96" />
+                            <img style="margin-right: 15px;" src="{{ asset('code2020/img/sponsor/niagahoster.png') }}" width="96" />
+                            <img style="margin-right: 15px;" src="{{ asset('code2020/img/sponsor/citranet.png') }}" width="96" />
+                            <img style="margin-right: 15px;" src="{{ asset('code2020/img/sponsor/jenius.png') }}" width="96" />
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <h4 style="margin-bottom: 16px;">Media Partner</h4>
