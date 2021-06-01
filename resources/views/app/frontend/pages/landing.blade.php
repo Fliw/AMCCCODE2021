@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CODE 2020</title>
+    <title>CODE 2021</title>
     <link rel="icon" href="{{ asset('code2020/img/amcc.png') }}" type="image/png">
 
     <link rel="stylesheet" href="{{ asset('code2020/vendors/bootstrap/bootstrap.min.css') }}">
@@ -22,6 +22,7 @@
     <script src="{{ asset('code2020/vendors/jquery/jquery-3.2.1.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('code2020/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('code2020/css/utama.css') }}">
+    
 
 </head>
 
@@ -74,7 +75,7 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container box_1620">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="#"><img width="100px" src="{{ asset('code2020/img/logo.png') }}" alt=""></a>
+                    <a class="navbar-brand logo_h" href="#"><img width="120px" src="{{ asset('code2020/img/logo.png') }}" alt=""></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -89,7 +90,7 @@
                             <li class="nav-item"><a class="nav-link" href="#benefit">Benefit</a></li>
                             <li class="nav-item"><a class="nav-link" href="#lomba">Lomba</a></li>
                             <li class="nav-item"><a class="nav-link" href="#tanggal">Tanggal</a></li>
-                            <li class="nav-item"><a class="nav-link btn btn-outline-warning" href="http://bit.ly/rulebookCODE2020" target="_blank">Rulebook Lomba</a></li>
+                            <li class="nav-item"><a class="nav-link btn btn-outline-danger" href="http://bit.ly/rulebookCODE2020" target="_blank">Rulebook Lomba</a></li>
                         </ul>
                     </div>
                 </div>
@@ -99,32 +100,35 @@
     <!--================Header Menu Area =================-->
 
 
-    <main class="side-main">
+    <main class="side-main" style="z-index:-100">
         <!--================ Hero sm Banner start =================-->
-        <section id="home" class="hero-banner mb-30px utama">
-            <div class="container">
+        
+        <section class="hero-banner mb-30px utama"  id="home">
+        <div id="particles-js" style="position:absolute; width:100%; height:100%;margin-top:-300px" ></div>
+        <div class="container">
                 <div class="row">
-                    <div class="col-lg-7">
-                        <div class="hero-banner__img">
-                            <img class="img-fluid" src="{{ asset('code2020/img/banner/hero-banner.png') }}" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-5 pt-5">
+                <div class="col-lg-5 pt-5">
                         <div class="hero-banner__content">
-                            <h1>>_<span id="typed"></span></h1>
-                            <div class="text-center">
-                                <p>Code Adalah Rangkaian Acara Kompetisi Antar Mobile Developer, IT Business Idea Dan Web Developer Serta
+                            <h1 style="font-size:50px;"> >_<span id="typed"></span></h1>
+                            <div>
+                                <p style="font-size:20px;">Code Adalah Rangkaian Acara Kompetisi Antar Mobile Developer, IT Business Idea Dan Web Developer Serta
                                     Seminar Bertaraf Nasional.</p>
-                                <a class="button buttonCode" href="{{ route('team.login') }}">Login Dashboard Tim</a>
-                                <a class="button buttonCode" href="/tickets/seminar-nasional">Daftar Seminar</a>
+                                <a class="button buttonCode text-white " href="{{ route('team.login') }}">Login Dashboard Tim</a>
+                                <a class="button buttonCode text-white ml-3" href="/tickets/seminar-nasional">Daftar CODE 2021</a>
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-7">
+                        
+                            <img width="85%" style="margin-left:150px;" class="img-fluid pl-5" src="{{ asset('code2020/img/amcc.png')}}" alt="">
+                
+                    </div>
+                    
                 </div>
             </div>
         </section>
         <!--================ Feature section start =================-->
-        <img src="{{ asset('code2020/img/bannerBawah.jpg') }}" id="bannerBawah" width="100%">
+        <img src="{{ asset('code2020/img/gelombangputih.png') }}" style="margin-top:-200px;z-index:1; position:absolute;" id="bannerBawah" width="100%">
         <img src="{{ asset('code2020/img/codeplace.png') }}" id="CodeAtas" width="80%">
         <section id="tentang" class="section-margin">
             <div class="container">
@@ -645,13 +649,14 @@
                 </div>
             </div>
         </footer>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <script type="text/javascript">
             AOS.init();
             var typed = new Typed("#typed", {
-                strings: ['Competition.<span style="color:#ffe271;">WebDevs()',
-                    'IT Business <span style="color:#ffe271;">Idea.',
-                    'Competition.<span style="color:#ffe271;">MobDevs()',
-                    'National <span style="color:#ffe271;">Seminar.'
+                strings: ['Competition.<span style="color:#F55553; text-shadow:0px 0px 10px #A973FF">WebDevs()',
+                    'IT Business <span style="color:#F55553;text-shadow:0px 0px 10px #A973FF">Idea.',
+                    'Competition.<span style="color:#F55553;text-shadow:0px 0px 10px #A973FF">MobDevs()',
+                    'National <span style="color:#F55553;text-shadow:0px 0px 10px #A973FF">Seminar.'
                 ],
                 typeSpeed: 20,
                 backSpeed: 30,
@@ -659,6 +664,137 @@
                 backDelay: 2000,
                 loop: true
             });
+            particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 100,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+
+
+/* ---- stats.js config ---- */
+
+var count_particles, stats, update;
+stats = new Stats;
+stats.setMode(0);
+stats.domElement.style.position = 'absolute';
+stats.domElement.style.left = '0px';
+stats.domElement.style.top = '0px';
+document.body.appendChild(stats.domElement);
+count_particles = document.querySelector('.js-count-particles');
+update = function() {
+  stats.begin();
+  stats.end();
+  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+  }
+  requestAnimationFrame(update);
+};
+requestAnimationFrame(update);
         </script>
         <!-- ================ End footer Area ================= -->
         <script src="{{ asset('code2020/vendors/bootstrap/bootstrap.bundle.min.js') }}">
@@ -667,6 +803,7 @@
 
         <script src="{{ asset('code2020/js/mail-script.js') }}"></script>
         <script src="{{ asset('code2020/js/main.js') }}"></script>
+        
 </body>
 
 </html>

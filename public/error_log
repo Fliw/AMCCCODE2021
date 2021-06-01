@@ -1,0 +1,1 @@
+[10-Feb-2021 11:44:52 Asia/Jakarta] PHP Fatal error:  Out of memory (allocated 6291456) (tried to allocate 65536 bytes) in /home/semnasam/sites/code.amcc.or.id/vendor/composer/ClassLoader.php on line 444
