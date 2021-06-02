@@ -22,7 +22,7 @@
     <script src="{{ asset('code2020/vendors/jquery/jquery-3.2.1.min.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('code2020/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('code2020/css/utama.css') }}">
-    
+
 
 </head>
 
@@ -45,12 +45,14 @@
         //     },8000);
         // });
 
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('.preloader').fadeOut(500);
         });
+
     </script>
     <!-- Modal Awal -->
-    <div class="modal fade" id="modalAwal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalAwal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -60,7 +62,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="{{asset('code2020/img/poster.jpg')}}" alt="poster" width="100%" class="rounded">
+                    <img src="{{ asset('code2020/img/poster.jpg') }}" alt="poster" width="100%" class="rounded">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Oke Kak !</button>
@@ -75,8 +77,11 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container box_1620">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="#"><img width="120px" src="{{ asset('code2020/img/logo.png') }}" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand logo_h" href="#"><img width="120px"
+                            src="{{ asset('code2020/img/logo.png') }}" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -85,12 +90,14 @@
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav justify-content-end">
                             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('ticket.index') }}">E-Ticket</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('ticket.index') }}">E-Ticket</a>
+                            </li>
                             <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a>
                             <li class="nav-item"><a class="nav-link" href="#benefit">Benefit</a></li>
                             <li class="nav-item"><a class="nav-link" href="#lomba">Lomba</a></li>
                             <li class="nav-item"><a class="nav-link" href="#tanggal">Tanggal</a></li>
-                            <li class="nav-item"><a class="nav-link btn btn-outline-danger" href="http://bit.ly/rulebookCODE2020" target="_blank">Rulebook Lomba</a></li>
+                            <li class="nav-item"><a class="nav-link btn btn-outline-danger"
+                                    href="http://bit.ly/rulebookCODE2020" target="_blank">Rulebook Lomba</a></li>
                         </ul>
                     </div>
                 </div>
@@ -102,108 +109,127 @@
 
     <main class="side-main" style="z-index:-100">
         <!--================ Hero sm Banner start =================-->
-        
-        <section class="hero-banner mb-30px utama"  id="home">
-        <div id="particles-js" style="position:absolute; width:100%; height:100%;margin-top:-300px" ></div>
-        <div class="container">
+
+        <section class="hero-banner mb-30px utama" id="home">
+            <div id="particles-js" style="position:absolute; width:100%; height:100%;margin-top:-300px"></div>
+            <div class="container">
                 <div class="row">
-                <div class="col-lg-5 pt-5">
+                    <div class="col-lg-5 pt-5">
                         <div class="hero-banner__content">
                             <h1 style="font-size:50px;"> >_<span id="typed"></span></h1>
                             <div>
-                                <p style="font-size:20px;">Code Adalah Rangkaian Acara Kompetisi Antar Mobile Developer, IT Business Idea Dan Web Developer Serta
+                                <p style="font-size:20px;">Code Adalah Rangkaian Acara Kompetisi Antar Mobile Developer,
+                                    IT Business Idea Dan Web Developer Serta
                                     Seminar Bertaraf Nasional.</p>
-                                <a class="button buttonCode text-white " href="{{ route('team.login') }}">Login Dashboard Tim</a>
-                                <a class="button buttonCode text-white ml-3" href="/tickets/seminar-nasional">Daftar CODE 2021</a>
+                                <a class="button buttonCode text-white " href="{{ route('team.login') }}">Login
+                                    Dashboard Tim</a>
+                                <a class="button buttonCode text-white ml-3" href="/tickets/seminar-nasional">Daftar
+                                    CODE 2021</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-7">
-                        
-                            <img width="85%" style="margin-left:150px;" class="img-fluid pl-5" src="{{ asset('code2020/img/amcc.png')}}" alt="">
-                
+
+                        <img width="85%" style="margin-left:150px;" class="img-fluid pl-5"
+                            src="{{ asset('code2020/img/amcc.png') }}" alt="">
+
                     </div>
-                    
+
                 </div>
             </div>
         </section>
         <!--================ Feature section start =================-->
-        <img src="{{ asset('code2020/img/gelombangputih.png') }}" style="margin-top:-200px;z-index:1; position:absolute;" id="bannerBawah" width="100%">
-        <img src="{{ asset('code2020/img/codeplace.png') }}" id="CodeAtas" width="80%">
+        <img src="{{ asset('code2020/img/gelombangputih.png') }}"
+            style="margin-top:-200px;z-index:1; position:absolute;" id="bannerBawah" width="100%">
         <section id="tentang" class="section-margin">
             <div class="container">
                 <div class="section-intro pb-85px text-center" data-aos="zoom-in-up" data-aos-delay="200">
-                    <h2 class="section-intro__title">Apa itu CODE?</h2>
+                <img class="mx-auto mb-4" src="{{ asset('code2020/img/logo.png') }}" style="margin-top:100px;" width="400px">
+                    <h1 class="section-intro__title">Apa itu CODE?</h1>
                     <p class="section-intro__subtitle">CODE (Competition of Developer) Adalah Serangkaian Acara Yang
                         Berisikan Kompetisi Antar Developer, IT Business dan Seminar Nasional,
                         Dengan Mengusung Tema
                         <br><br>
                         <i class="warnaTextCode">"Smart Digital Technology With Code"</i>
-                        <br><img src="{{ asset('code2020/img/maskot.png') }}" width="100px"><br><br>
-                        Kita Percaya Bahwa Kita Dapat Membantu Mengembangkan Bangsa ini dengan Teknologi Smart Digital,
-                        Sehingga Nantinya Indonesia Akan Menjadi Bangsa Yang Terdepan Dalam Inovasi Dunia Digital.
-                        <br>Dibantu Oleh Para Pembicara Yang Ahli Dalam Bidang Teknologi, Kita Optimis Dapat Mempererat
-                        Persatuan Antar Devs Dan Membantu Negeri Ini.
+                        <br><br>
+                        Karena dengan adanya dunia Digital yang sudah maju dan berkembang.<br>Kita telah dimudahkan
+                        untuk menjelajah dunia termasuk dunia digital itu sendiri. <br> sehingga nantinya diharapkan
+                        kita sebagai generasi penerus bangsa dapat menjelajah dan mengembangkan inovasi di dalam dunia
+                        digital itu sendiri. <br> dibantu oleh para pembicara yang ahli dalam bidang teknologi, kita
+                        optimis dapat mempererat persatuan antar developer dan membantu perubahan pada negeri ini.
                     </p>
 
                 </div>
                 <div id="benefit" class="container">
-                    <h2 class="section-intro__title">Kenapa Ikut CODE?</h2>
+                    <h2 class="section-intro__title">Alasan Ikut CODE?</h2>
                     <div class="row">
                         <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
-                            <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
+                            <div style="height:300px;" class=" card card-feature text-center text-lg-left mb-5 mb-lg-0">
                                 <span class="card-feature__icon">
                                     <img src="{{ asset('code2020/img/idea.png') }}" width="60px">
                                 </span>
                                 <h3 class="card-feature__title">Dapat Menyalurkan Ide</h3>
                                 <p class="card-feature__subtitle">Ide Kalian Dapat Tersalurkan, Diapresiasi dan
-                                    Diwujudkan Bersama.</p>
+                                    Diwujudkan.</p>
                             </div>
                         </div>
                         <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
-                            <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
+                            <div style="height:300px;" class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                                 <span class="card-feature__icon">
                                     <img src="{{ asset('code2020/img/teach.png') }}" width="60px">
                                 </span>
-                                <h3 class="card-feature__title">Berbagi Bagi Ilmu</h3>
-                                <p class="card-feature__subtitle">Kalian Dapat Membagi Ilmu Dan Mendapatkan Ilmu Bersama
-                                    Orang Yang Lebih Berpengalaman.</p>
+                                <h3 class="card-feature__title">Berbagi Ilmu</h3>
+                                <p class="card-feature__subtitle">Kalian akan mendapatkan ilmu dan kalian bisa
+                                    membagikan ilmu bersama orang yang lebih berpengalaman dalam bidangnya.</p>
                             </div>
                         </div>
-                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
-                            <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
+                        <div  class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
+                            <div style="height:300px;" class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                                 <span class="card-feature__icon">
                                     <img src="{{ asset('code2020/img/book.png') }}" width="60px">
                                 </span>
-                                <h3 class="card-feature__title">Pengalaman Bertambah</h3>
+                                <h3 class="card-feature__title">Bertambahnya pengalaman</h3>
                                 <p class="card-feature__subtitle">Pengalaman Kalian Akan Bertambah Ketika Mengikuti
-                                    Event Ini, Selain Itu Kalian Pun Dapat Mengimprovisasi Skill Teamwork Kalian.</p>
+                                    Event Ini, Selain Itu Kalian Pun Dapat mengasah Skill dan Teamwork Kalian.</p>
                             </div>
                         </div>
+                        <br>
                         <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
-                            <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
+                            <div style="height:300px;" class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                                 <span class="card-feature__icon">
                                     <img src="{{ asset('code2020/img/productive.png') }}" width="60px">
                                 </span>
                                 <h3 class="card-feature__title">Lebih Produktif</h3>
                                 <p class="card-feature__subtitle">
-                                    Dengan dirumah aja, kalian bisa lebih produktif menggali kemampuan-mu
+                                    dengan masih terbatasnya aktivitas diluar rumah kalian bisa menggali kemampuan yang
+                                    kalian miliki dengan mengikuti CODE
                                 </p>
                             </div>
                         </div>
                         <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
-                            <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
+                            <div style="height:300px;" class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
+                                <span class="card-feature__icon">
+                                    <img src="{{ asset('code2020/img/challenge.png') }}" width="60px">
+                                </span>
+                                <h3 class="card-feature__title">Hadiah Jutaan Rupiah</h3>
+                                <p class="card-feature__subtitle">
+                                    menangkan hadiah total jutaan rupiah
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200">
+                            <div style="height:300px;" class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                                 <span class="card-feature__icon">
                                     <img src="{{ asset('code2020/img/challenge.png') }}" width="60px">
                                 </span>
                                 <h3 class="card-feature__title">Tantangan Baru</h3>
                                 <p class="card-feature__subtitle">
-                                    Tantangan ini adalah hal yang baru yang dimana competition ini dilakukan secara online
+                                    tantangan ini berupa kompetisi yang dilakukan secara online
                                 </p>
                             </div>
                         </div>
                     </div>
-                </div>
+
             </div>
         </section>
         <section style="margin-bottom: 64px;">
@@ -211,7 +237,8 @@
                 <div id="lomba" class="container">
                     <h2 class="section-intro__title">Acara Yang Dilombakan</h2>
                     <div class="row mx-auto">
-                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200" style="float:none;margin:auto;">
+                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200"
+                            style="float:none;margin:auto;">
                             <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                                 <span class="card-feature__icon text-center">
                                     <img src="{{ asset('code2020/img/android.png') }}" width="60px">
@@ -221,7 +248,8 @@
                                     secara kreatif dan inovatif.</p>
                             </div>
                         </div>
-                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200" style="float:none;margin:auto;">
+                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200"
+                            style="float:none;margin:auto;">
                             <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                                 <span class="card-feature__icon text-center">
                                     <img src="{{ asset('code2020/img/ide.png') }}" width="60px">
@@ -231,7 +259,8 @@
                                     memecahkan permasalahan bisnis di Indonesia.</p>
                             </div>
                         </div>
-                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200" style="float:none;margin:auto;">
+                        <div class="col-lg-4" data-aos="zoom-in-up" data-aos-delay="200"
+                            style="float:none;margin:auto;">
                             <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
                                 <span class="card-feature__icon text-center">
                                     <img src="{{ asset('code2020/img/web.png') }}" width="60px">
@@ -275,7 +304,8 @@
                 <div class="panel-group" id="faqAccordion">
                     <br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question0">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question0">
                             <h2 class="text-white">FaQ (Frequently Asked Question)</h2>
                             <h4 class="panel-title">
                                 <a class="ing text-white">
@@ -288,15 +318,16 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
                                 <p>
-                                    Halo sobat CODE! dikarenakan adanya himbauan darurat COVID-19 
-                                    dari pemerintah membuat kita tidak dapat berjumpa secara langsung, 
+                                    Halo sobat CODE! dikarenakan adanya himbauan darurat COVID-19
+                                    dari pemerintah membuat kita tidak dapat berjumpa secara langsung,
                                     sehingga keseluruhan acara CODE 2020 akan dilaksanakan secara online.
                                 </p>
                             </div>
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question2">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question2">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, kalo nanti ada peserta lomba berasal dari luar jogja,
@@ -309,7 +340,7 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
 
-                                <p> 
+                                <p>
                                     Halo sobat CODE 2020. Maaf ya, untuk saat ini kami tidak menyediakan paket
                                     transportasi penjemputan dan penginapan. Tetapi kami sudah memberikan rekomendasi
                                     untuk penginapannya kok. :)
@@ -318,7 +349,8 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question3">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question3">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, untuk mengikuti TM nanti apakah harus full team ya?
@@ -331,15 +363,16 @@
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
 
                                 <p>
-                                    Halo sobat CODE 2020, untuk mengikuti TM boleh perwakilan dari team yaaa. 
-                                    Tetapi diusahakan full team yaa sobat. :), untuk TM akan di lakukan melalui media 
+                                    Halo sobat CODE 2020, untuk mengikuti TM boleh perwakilan dari team yaaa.
+                                    Tetapi diusahakan full team yaa sobat. :), untuk TM akan di lakukan melalui media
                                     conference ya kak, nanti panitia akan meng-infokan.
                                 </p>
                             </div>
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question4">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question4">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, apakah peserta lomba yang tidak juara juga akan
@@ -354,13 +387,15 @@
 
                                 <p>
                                     Halo sobat CODE 2020, Jadi untuk peserta yang gagal menuju tahap selanjutnya
-                                    akan mendapatkan e-sertifikat, dengan catatan peserta harus lolos ditahap2 (submit video).
+                                    akan mendapatkan e-sertifikat, dengan catatan peserta harus lolos ditahap2 (submit
+                                    video).
                                 </p>
                             </div>
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question5">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question5">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, untuk informasi syarat dan ketentuan nya gimana ya ?
@@ -382,7 +417,8 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question6">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question6">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, ada benefit dapet gebetan nggak?</a>
@@ -400,7 +436,8 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question7">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question7">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak, apakah boleh jika hanya mengikuti lomba saja, tapi
@@ -414,14 +451,16 @@
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
 
                                 <p>
-                                    Halo sobat CODE 2020, Seminar nasional merupakan fasilitas bagi peserta lomba 
-                                    yang lolos menuju tahap semifinal ( submit video ). Silahkan tunggu informasi selanjutnya ya kak :) 
+                                    Halo sobat CODE 2020, Seminar nasional merupakan fasilitas bagi peserta lomba
+                                    yang lolos menuju tahap semifinal ( submit video ). Silahkan tunggu informasi
+                                    selanjutnya ya kak :)
                                 </p>
                             </div>
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question8">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question8">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Rangkaian acaranya berlangsung berapa hari ya Kak?
@@ -440,7 +479,8 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question9">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question9">
 
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak kalo misal program yang sudah dibuat tapi pas hari H
@@ -454,21 +494,25 @@
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
 
                                 <p>
-                                    Halo sobat CODE 2020, diusahakan harus selesai yah sobat, karena pada proposal 
-                                    peserta diwajibkan menyantumkan implementasi aplikasi. 
+                                    Halo sobat CODE 2020, diusahakan harus selesai yah sobat, karena pada proposal
+                                    peserta diwajibkan menyantumkan implementasi aplikasi.
                                     Jadi Implementasi aplikasi itu semacam prototype / produk hasil jadi.
-                                    <br/><br/>
-                                    Sesuai ketentuan, jika itu kategori mobile dan web ( diharapkan juga menyantumkan hasil produk jadi si aplikasi itu ), 
+                                    <br /><br />
+                                    Sesuai ketentuan, jika itu kategori mobile dan web ( diharapkan juga menyantumkan
+                                    hasil produk jadi si aplikasi itu ),
                                     namun jika kategori IT Business ( bisa menyantumkan prototype produk itu).
-                                    <br/><br/>
-                                    Nah untuk pertanyaan, apakah aplikasi itu harus sudah selesai saat pengumpulan proposal? 
-                                    Itu lebih bagus lagi, karena produk yang di implementasikan didalam proposal itu sudah matang.
+                                    <br /><br />
+                                    Nah untuk pertanyaan, apakah aplikasi itu harus sudah selesai saat pengumpulan
+                                    proposal?
+                                    Itu lebih bagus lagi, karena produk yang di implementasikan didalam proposal itu
+                                    sudah matang.
                                 </p>
                             </div>
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question10">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question10">
                             <h4 class="panel-title">
                                 <a class="ing text-white">Q: Kak yang mempengaruhi faktor penilaiannya apa saja ya?
 
@@ -488,7 +532,8 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question11">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question11">
                             <h4 class="panel-title">
                                 <a class="ing text-white">
                                     Q: Kak untuk yang kategori IT Business apakah harus bisnis yang sudah berjalan?
@@ -508,10 +553,12 @@
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question12">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question12">
                             <h4 class="panel-title">
                                 <a class="ing text-white">
-                                    Q: Min, rulebooknya apakah ada perubahan isi ya? karena acara yang berubah juga jadi Online Competition?
+                                    Q: Min, rulebooknya apakah ada perubahan isi ya? karena acara yang berubah juga jadi
+                                    Online Competition?
                                 </a>
                             </h4>
                         </div>
@@ -519,16 +566,18 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
                                 <p>
-                                    Halo sobat CODE 2020, iyap betul sekali. <br/>
-                                    Rulebook online sedang dalam proses ya sobat. 
-                                    Tetap pantau IG AMCC (<a href="https://instagram.com/amccamikom" target="_blank">@amccamikom</a>) secara berkala 
+                                    Halo sobat CODE 2020, iyap betul sekali. <br />
+                                    Rulebook online sedang dalam proses ya sobat.
+                                    Tetap pantau IG AMCC (<a href="https://instagram.com/amccamikom"
+                                        target="_blank">@amccamikom</a>) secara berkala
                                     untuk mengetahui informasi update-an selanjutnya :)
                                 </p>
                             </div>
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question13">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question13">
                             <h4 class="panel-title">
                                 <a class="ing text-white">
                                     Q: Min, link media conferencenya apakah akan dicantumkan di rulebook ya?
@@ -539,17 +588,20 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
                                 <p>
-                                    Hallo Sobat CODE 2020, untuk link nya tidak kami share melalui rulebook ya Sobat.. 
-                                    Jadi, nanti link media conference akan kami infokan pada peserta lomba yang sudah lolos di tahap 2 (submit video) yak :)
+                                    Hallo Sobat CODE 2020, untuk link nya tidak kami share melalui rulebook ya Sobat..
+                                    Jadi, nanti link media conference akan kami infokan pada peserta lomba yang sudah
+                                    lolos di tahap 2 (submit video) yak :)
                                 </p>
                             </div>
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question14">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question14">
                             <h4 class="panel-title">
                                 <a class="ing text-white">
-                                    Q: Min, nanti jika peserta lomba gagal menuju tahap selanjutnya, apakah juga tetap mendapatkan fasilitas Seminar Nasional ya?
+                                    Q: Min, nanti jika peserta lomba gagal menuju tahap selanjutnya, apakah juga tetap
+                                    mendapatkan fasilitas Seminar Nasional ya?
                                 </a>
                             </h4>
                         </div>
@@ -557,18 +609,21 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
                                 <p>
-                                    Hallo Sobat CODE 2020, untuk fasilitas SEMNAS hanya diperuntukkan bagi 
-                                    peserta lomba yang sudah lolos di tahap 2 (submit video) yak :).. 
-                                    Jadi untuk peserta lomba yang gagal menuju tahap selanjutnya dan menginginkan 
-                                    untuk join acara SEMNAS, bisa mendaftarkan diri sebagai peserta seminar nasional pada link 
-                                    yang tertera di poster semnas. 
-                                    Cek informasi secara berkala di IG AMCC (<a href="https://instagram.com/amccamikom" target="_blank">@amccamikom</a>) ya sobat :)
+                                    Hallo Sobat CODE 2020, untuk fasilitas SEMNAS hanya diperuntukkan bagi
+                                    peserta lomba yang sudah lolos di tahap 2 (submit video) yak :)..
+                                    Jadi untuk peserta lomba yang gagal menuju tahap selanjutnya dan menginginkan
+                                    untuk join acara SEMNAS, bisa mendaftarkan diri sebagai peserta seminar nasional
+                                    pada link
+                                    yang tertera di poster semnas.
+                                    Cek informasi secara berkala di IG AMCC (<a href="https://instagram.com/amccamikom"
+                                        target="_blank">@amccamikom</a>) ya sobat :)
                                 </p>
                             </div>
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question15">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question15">
                             <h4 class="panel-title">
                                 <a class="ing text-white">
                                     Q: Min, nanti model pitchingnya itu seperti apa ya min? kan acara kita online nih?
@@ -579,15 +634,18 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
                                 <p>
-                                    Hallo Sobat CODE 2020, nah untuk pitchingnya nanti tiap tim akan presentasi langsung didepan juri, 
-                                    dengan menyalakan kamera media conference. Karena kita ada 3 kategori lomba, 
-                                    jadi nanti pitching dilakukan pada link media conference berdasarkan kategori lomba yang akan panitia infokan.
+                                    Hallo Sobat CODE 2020, nah untuk pitchingnya nanti tiap tim akan presentasi langsung
+                                    didepan juri,
+                                    dengan menyalakan kamera media conference. Karena kita ada 3 kategori lomba,
+                                    jadi nanti pitching dilakukan pada link media conference berdasarkan kategori lomba
+                                    yang akan panitia infokan.
                                 </p>
                             </div>
                         </div>
                     </div><br>
                     <div class="panel panel-default ">
-                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question16">
+                        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse"
+                            data-parent="#faqAccordion" data-target="#question16">
                             <h4 class="panel-title">
                                 <a class="ing text-white">
                                     Q: Min, kalau pitching sinyal buruk bagaimana ya?
@@ -598,7 +656,7 @@
                             <div class="panel-body">
                                 <h5><span class="label label-primary text-white">Answer</span></h5>
                                 <p>
-                                    Hallo Sobat CODE 2020, panitia berharap untuk koneksinya dipastikan aman ya sobat :) 
+                                    Hallo Sobat CODE 2020, panitia berharap untuk koneksinya dipastikan aman ya sobat :)
                                     Tapi jangan naik tower ya sobat.. Keselamatan tetap nomor 1
                                 </p>
                             </div>
@@ -609,26 +667,39 @@
                 <!--/panel-group-->
             </div>
 
-            <div class="mediasponsor section-gap" style="background: #fff; width: 100%; padding: 24px 0 24px 0; margin-top: 48px;">
+            <div class="mediasponsor section-gap"
+                style="background: #fff; width: 100%; padding: 24px 0 24px 0; margin-top: 48px;">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <h4 style="margin-bottom: 16px;">Sponsored by</h4>
-                            <img style="margin-right: 15px;" src="{{ asset('code2020/img/sponsor/niagahoster.png') }}" width="96" />
-                            <img style="margin-right: 15px;" src="{{ asset('code2020/img/sponsor/citranet.png') }}" width="96" />
-                            <img style="margin-right: 15px;" src="{{ asset('code2020/img/sponsor/jenius.png') }}" width="96" />
+                            <img style="margin-right: 15px;"
+                                src="{{ asset('code2020/img/sponsor/niagahoster.png') }}" width="96" />
+                            <img style="margin-right: 15px;" src="{{ asset('code2020/img/sponsor/citranet.png') }}"
+                                width="96" />
+                            <img style="margin-right: 15px;" src="{{ asset('code2020/img/sponsor/jenius.png') }}"
+                                width="96" />
                         </div>
                         <div class="col-sm-12 col-md-6">
                             <h4 style="margin-bottom: 16px;">Media Partner</h4>
-                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/1.png') }}" width="48" />
-                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/2.png') }}" width="48" />
-                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/3.png') }}" width="48" />
-                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/4.png') }}" width="48" />
-                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/5.png') }}" width="48" />
-                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/6.png') }}" width="48" />
-                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/7.png') }}" width="48" />
-                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/8.png') }}" width="48" />
-                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/9.png') }}" width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/1.png') }}"
+                                width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/2.png') }}"
+                                width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/3.png') }}"
+                                width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/4.png') }}"
+                                width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/5.png') }}"
+                                width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/6.png') }}"
+                                width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/7.png') }}"
+                                width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/8.png') }}"
+                                width="48" />
+                            <img style="margin: 0 15px 15px 0" src="{{ asset('code2020/img/mediapartner/9.png') }}"
+                                width="48" />
                         </div>
                     </div>
                 </div>
@@ -641,10 +712,13 @@
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
+
                             </script> All rights reserved <br>
-                            <p style="color:#0e1424">| This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a style="color:#0e1424" href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
+                        <p style="color:#0e1424">| This template is made with <i class="fa fa-heart"
+                                aria-hidden="true"></i> by <a style="color:#0e1424" href="https://colorlib.com"
+                                target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
                     </div>
                 </div>
             </div>
@@ -653,10 +727,10 @@
         <script type="text/javascript">
             AOS.init();
             var typed = new Typed("#typed", {
-                strings: ['Competition.<span style="color:#F55553; text-shadow:0px 0px 10px #A973FF">WebDevs()',
-                    'IT Business <span style="color:#F55553;text-shadow:0px 0px 10px #A973FF">Idea.',
-                    'Competition.<span style="color:#F55553;text-shadow:0px 0px 10px #A973FF">MobDevs()',
-                    'National <span style="color:#F55553;text-shadow:0px 0px 10px #A973FF">Seminar.'
+                strings: ['Competition.<span style="color:#F55553; text-shadow:0px 0px 10px #F55553">WebDevs()',
+                    'IT Business <span style="color:#F55553;text-shadow:0px 0px 10px #F55553">Idea.',
+                    'Competition.<span style="color:#F55553;text-shadow:0px 0px 10px #F55553">MobDevs()',
+                    'National <span style="color:#F55553;text-shadow:0px 0px 10px #F55553">Seminar.'
                 ],
                 typeSpeed: 20,
                 backSpeed: 30,
@@ -665,136 +739,137 @@
                 loop: true
             });
             particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 100,
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 6,
-      "direction": "none",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "grab"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 140,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
-});
+                "particles": {
+                    "number": {
+                        "value": 100,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "src": "img/github.svg",
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
 
 
-/* ---- stats.js config ---- */
+            /* ---- stats.js config ---- */
 
-var count_particles, stats, update;
-stats = new Stats;
-stats.setMode(0);
-stats.domElement.style.position = 'absolute';
-stats.domElement.style.left = '0px';
-stats.domElement.style.top = '0px';
-document.body.appendChild(stats.domElement);
-count_particles = document.querySelector('.js-count-particles');
-update = function() {
-  stats.begin();
-  stats.end();
-  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-  }
-  requestAnimationFrame(update);
-};
-requestAnimationFrame(update);
+            var count_particles, stats, update;
+            stats = new Stats;
+            stats.setMode(0);
+            stats.domElement.style.position = 'absolute';
+            stats.domElement.style.left = '0px';
+            stats.domElement.style.top = '0px';
+            document.body.appendChild(stats.domElement);
+            count_particles = document.querySelector('.js-count-particles');
+            update = function() {
+                stats.begin();
+                stats.end();
+                if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+                    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+                }
+                requestAnimationFrame(update);
+            };
+            requestAnimationFrame(update);
+
         </script>
         <!-- ================ End footer Area ================= -->
         <script src="{{ asset('code2020/vendors/bootstrap/bootstrap.bundle.min.js') }}">
@@ -803,7 +878,7 @@ requestAnimationFrame(update);
 
         <script src="{{ asset('code2020/js/mail-script.js') }}"></script>
         <script src="{{ asset('code2020/js/main.js') }}"></script>
-        
+
 </body>
 
 </html>
