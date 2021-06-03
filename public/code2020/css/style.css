@@ -344,7 +344,7 @@ h3,
     top: -70px;
     left: 0;
     right: 0;
-    background: #412fb3;
+    background: #000454;
     z-index: 99;
     transform: translateY(70px);
     transition: transform 500ms ease, background 500ms ease;
@@ -456,7 +456,7 @@ h3,
         margin-bottom: 23px
     }
     .header_area .navbar {
-        background: #412fb3
+        background: #000454
     }
     .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
         opacity: 1
@@ -798,7 +798,7 @@ h3,
     width: 100%;
     height: 100%;
     background: url(../img/banner/banner.jpg) left center no-repeat;
-    filter: brightness(50%);
+    filter: brightness(40%);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
