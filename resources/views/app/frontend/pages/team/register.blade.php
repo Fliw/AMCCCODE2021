@@ -109,10 +109,10 @@
                           </div>
                         </div>
                       </div>
-                        <p id="errorValidate" style="color:red;display:none;">Maaf nama tim atau nama institusi kurang panjang</p>
+                        <p id="errorValidate" style="color:red;display:none;"></p>
                       <hr>
                       <div class="text-right">
-                        <a href="#team-step-2" id="to-step-2" class="btn btn-primary btn-icon icon-right" data-toggle="tab" role="tab">Ketua & Anggota <i class="fas fa-arrow-right"></i></a>
+                        <a href="#team-step-2" id="to-step-2" class="btn btn-primary btn-icon icon-right disabled" data-toggle="tab" role="tab">Ketua & Anggota <i class="fas fa-arrow-right"></i></a>
                       </div>
                     </div> <!-- End First Step -->
 

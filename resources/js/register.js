@@ -1,7 +1,24 @@
 $(document).ready(function() {
-    $('#tim_kategori').change(function() {
-        validateStep1();
+    $('#tim_nama').focusout(function() {
+        if ($('#tim_nama').val().length < 3) {
+            $('#errorValidate').html("maaf nama tim minimal 4 karakter");
+            $('#errorValidate').css('display', 'block');
+        } else {
+            $('#errorValidate').css('display', 'none');
+        }
     });
+    $('#tim_institusi').focusout(function() {
+        if ($('#tim_institusi').val().length < 6) {
+            $('#errorValidate').html("maaf nama institusi minimal 6 karakter");
+            $('#errorValidate').css('display', 'block');
+        } else {
+            $('#errorValidate').css('display', 'none');
+        }
+    });
+    $('#tim_kategori').change(function() {
+        $('#to-step-2').removeClass('disabled');
+    });
+
 
     $("#ketua_nim").keyup(function() {
         validateStep2();
@@ -30,50 +47,50 @@ $(document).ready(function() {
     });
 });
 
-function validateStep1() {
-    let formNamaTim = $('#tim_nama').val().length;
-    let formInstitusi = $('#tim_institusi').val().length;
-    let formKategori = $('#tim_kategori').val();
+// function validateStep1() {
+//     let formNamaTim = $('#tim_nama').val().length;
+//     let formInstitusi = $('#tim_institusi').val().length;
+//     let formKategori = $('#tim_kategori').val();
 
-    if (formNamaTim >= 3 && formInstitusi >= 6 && formKategori > 0) {
-        $('#to-step-2').removeClass('disabled');
-    } else {
-        $('#to-step-2').addClass('disabled');
-        $('#errorValidate').css("display", "block");
-    }
-}
+//     if (formNamaTim >= 3 && formInstitusi >= 6 && formKategori > 0) {
+//         $('#to-step-2').removeClass('disabled');
+//     } else {
+//         $('#to-step-2').addClass('disabled');
+//         $('#errorValidate').css("display", "block");
+//     }
+// }
 
-function validateStep2() {
-    let formNimKetua = $('#ketua_nim').val().length;
-    let formNamaKetua = $('#ketua_nama').val().length;
-    let formWaKetua = $('#ketua_wa').val().length;
-    let formMemberData = $("div[id^='anggota-wrap-'").length
-    let formMember = []
-    let formMemberPass = false;
+// function validateStep2() {
+//     let formNimKetua = $('#ketua_nim').val().length;
+//     let formNamaKetua = $('#ketua_nama').val().length;
+//     let formWaKetua = $('#ketua_wa').val().length;
+//     let formMemberData = $("div[id^='anggota-wrap-'").length
+//     let formMember = []
+//     let formMemberPass = false;
 
-    for (i = 1; i <= formMemberData; i++) {
-        let nim = $(`input[name="member[${i}][nim]"]`).val().length;
-        let name = $(`input[name="member[${i}][name]"]`).val().length;
+//     for (i = 1; i <= formMemberData; i++) {
+//         let nim = $(`input[name="member[${i}][nim]"]`).val().length;
+//         let name = $(`input[name="member[${i}][name]"]`).val().length;
 
-        if (nim >= 3 && name >= 6) {
-            formMember[i - 1] = true
-        } else {
-            formMember[i - 1] = false
-        }
-    }
+//         if (nim >= 3 && name >= 6) {
+//             formMember[i - 1] = true
+//         } else {
+//             formMember[i - 1] = false
+//         }
+//     }
 
-    if (formMember.length > 0 && formMember.indexOf(false) == -1) {
-        formMemberPass = true;
-    } else {
-        formMemberPass = false;
-    }
+//     if (formMember.length > 0 && formMember.indexOf(false) == -1) {
+//         formMemberPass = true;
+//     } else {
+//         formMemberPass = false;
+//     }
 
-    if (formNimKetua > 3 && formNamaKetua >= 6 && formWaKetua >= 10 && formMemberPass) {
-        $('#to-step-3').removeClass('disabled');
-    } else {
-        $('#to-step-3').addClass('disabled');
-    }
-}
+//     if (formNimKetua > 3 && formNamaKetua >= 6 && formWaKetua >= 10 && formMemberPass) {
+//         $('#to-step-3').removeClass('disabled');
+//     } else {
+//         $('#to-step-3').addClass('disabled');
+//     }
+// }
 
 function validateStep3() {
     let formEmail = $('#third_email').val().length;
