@@ -61,7 +61,7 @@
                         1. CODE 2021 (untuk saat ini) adalah kompetisi yang hanya ditujukan untuk mahasiswa/i dari <strong>perguruan tinggi</strong> (negeri maupun swasta).
                         <br/>
                         2. Sudah menentukan kategori yang ingin diikuti? sudah membaca rulebooknya? pastikan teman-teman sudah yaa :)
-                        kalau belum bisa mengaksesnya disini <a href="http://bit.ly/rulebookCODE2020" target="_blank"><strong>[ Link Rulebook ]</strong></a>.
+                        kalau belum bisa mengaksesnya disini <a href="http://ungu.in/RulebookCode2021" target="_blank"><strong>[ Link Rulebook ]</strong></a>.
                         <br/>
                         3. Jika teman-teman mempunyai pertanyaan, mungkin akan menemukan jawabannya di <a href="https://code.amcc.or.id/#faqAccordion" target="_blank"><strong>[ Halaman FAQ ]</strong></a> ;)<br/>
                         4. Tetap semangat dan produktif &#128170;
@@ -74,6 +74,7 @@
                     <!-- First Step -->
                     <div class="tab-pane fade" id="team-step-1" role="tabpanel">
                       <h5 style="color: #6777ef">Mari mulai dengan informasi dasar tim</h5><br/>
+                     
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Nama Tim</label>
                         <div class="col-sm-10">
@@ -87,7 +88,7 @@
                       <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Asal Institusi</label>
                         <div class="col-sm-10">
-                          <input type="text" id="tim_institusi" name="tim[institusi]" class="form-control @error('tim.institusi') is-invalid @enderror" value="{{ old('tim.institusi') }}" required minlength="3" maxlength="100">
+                          <input type="text" id="tim_institusi" name="tim[institusi]" class="form-control @error('tim.institusi') is-invalid @enderror" value="{{ old('tim.institusi') }}" required minlength="6" maxlength="100">
                           <div class="invalid-feedback">
                             {{ $errors->first('tim.institusi') }}
                           </div>
@@ -108,10 +109,10 @@
                           </div>
                         </div>
                       </div>
-
+                        <p id="errorValidate" style="color:red;display:none;">Maaf nama tim atau nama institusi kurang panjang</p>
                       <hr>
                       <div class="text-right">
-                        <a href="#team-step-2" id="to-step-2" class="btn btn-primary btn-icon icon-right disabled" data-toggle="tab" role="tab">Ketua & Anggota <i class="fas fa-arrow-right"></i></a>
+                        <a href="#team-step-2" id="to-step-2" class="btn btn-primary btn-icon icon-right" data-toggle="tab" role="tab">Ketua & Anggota <i class="fas fa-arrow-right"></i></a>
                       </div>
                     </div> <!-- End First Step -->
 

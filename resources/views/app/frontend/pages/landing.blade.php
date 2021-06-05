@@ -129,7 +129,7 @@
                                 <a class="button buttonCode text-white "
                                     href="{{ route('team.login') }}">Login
                                     Dashboard Tim</a>
-                                <a class="button buttonCode text-white ml-3" href="/tickets/seminar-nasional">Daftar
+                                <a class="button buttonCode text-white ml-3" href="/team/register">Daftar
                                     CODE 2021</a>
                             </div>
                         </div>
