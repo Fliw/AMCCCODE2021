@@ -161,7 +161,7 @@
                       </div>
 
                       <div id="anggota"></div>
-
+                        <p id="errorValidate2" style="color:red;display:none;"></p>
                       <hr>
                       <div class="row">
                         <div class="col-sm-6">
@@ -206,7 +206,7 @@
                           </div>
                         </div>
                       </div>
-
+                      <p id="errorValidate3" style="color:red;display:none;"></p>
                       <p style="line-height: 1.8">
                         *) Setelah klik <strong>Selesaikan Registrasi</strong>, kamu akan diarahkan ke dashboard tim kamu.<br/>
                         Dashboard ini bisa kamu digunakan untuk berbagai kebutuhan tim. 

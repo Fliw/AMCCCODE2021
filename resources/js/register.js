@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#tim_nama').focusout(function() {
-        if ($('#tim_nama').val().length < 3) {
+        if ($('#tim_nama').val().length <= 3) {
             $('#errorValidate').html("maaf nama tim minimal 4 karakter");
             $('#errorValidate').css('display', 'block');
         } else {
@@ -21,76 +21,89 @@ $(document).ready(function() {
 
 
     $("#ketua_nim").keyup(function() {
-        validateStep2();
+        if ($('#ketua_nim').val().length <= 3) {
+            $('#errorValidate2').html("maaf nim ketua minimal 4 karakter");
+            $('#errorValidate2').css('display', 'block');
+        } else {
+            $('#errorValidate2').css('display', 'none');
+        }
     });
     $("#ketua_nama").keyup(function() {
-        validateStep2();
+        if ($('#ketua_nama').val().length < 6) {
+            $('#errorValidate2').html("maaf nama ketua minimal 6 karakter");
+            $('#errorValidate2').css('display', 'block');
+        } else {
+            $('#errorValidate2').css('display', 'none');
+        }
     });
     $("#ketua_wa").keyup(function() {
-        validateStep2();
+        if ($('#ketua_wa').val().length < 9) {
+            $('#errorValidate2').html("maaf nomor whatsapp minimal 10 karakter");
+            $('#errorValidate2').css('display', 'block');
+        } else {
+            $('#errorValidate2').css('display', 'none');
+        }
     });
+
     $('#jumlah_anggota').on('change', function(e) {
-        validateStep2();
+        let formMemberData = $("div[id^='anggota-wrap-'").length;
+        let formMember = []
+        let formMemberPass = false;
         $("input[name^='member']").keyup(function() {
-            validateStep2();
+            for (i = 1; i <= formMemberData; i++) {
+                let nim = $(`input[name="member[${i}][nim]"]`).val().length;
+                let name = $(`input[name="member[${i}][name]"]`).val().length;
+
+                if (nim >= 3 && name >= 6) {
+                    formMember[i - 1] = true;
+                    $('#errorValidate2').css('display', 'none');
+                } else {
+                    formMember[i - 1] = false
+                    $('#errorValidate2').html("maaf nama member minimal 6 karakter dan nim minimal 3 karakter");
+                    $('#errorValidate2').css('display', 'block');
+                    $('#to-step-3').addClass('disabled');
+                }
+            }
+
+            if (formMember.length > 0 && formMember.indexOf(false) == -1) {
+                formMemberPass = true;
+                $('#to-step-3').removeClass('disabled');
+            } else {
+                formMemberPass = false;
+            }
         });
     })
 
     $('#third_email').keyup(function() {
-        validateStep3();
+        if ($('#third_email').val().length < 6) {
+            $('#errorValidate3').html("maaf email minimal 6 karakter");
+            $('#errorValidate3').css('display', 'block');
+            $('#submit').addClass('disabled');
+        } else {
+            $('#errorValidate3').css('display', 'none');
+        }
     });
+
     $('#third_password').keyup(function() {
-        validateStep3();
+        if ($('#third_password').val().length < 6) {
+            $('#errorValidate3').html("maaf password minimal 6 karakter");
+            $('#errorValidate3').css('display', 'block');
+            $('#submit').addClass('disabled');
+        } else {
+            $('#errorValidate3').css('display', 'none');
+        }
     });
     $('#third_confirm').keyup(function() {
-        validateStep3();
+        if ($('#third_confirm').val() != $('#third_password').val()) {
+            $('#errorValidate3').html("maaf konfirmasi password tidak sesuai");
+            $('#errorValidate3').css('display', 'block');
+            $('#submit').addClass('disabled');
+        } else {
+            $('#errorValidate3').css('display', 'none');
+            $('#submit').removeClass('disabled');
+        }
     });
 });
-
-// function validateStep1() {
-//     let formNamaTim = $('#tim_nama').val().length;
-//     let formInstitusi = $('#tim_institusi').val().length;
-//     let formKategori = $('#tim_kategori').val();
-
-//     if (formNamaTim >= 3 && formInstitusi >= 6 && formKategori > 0) {
-//         $('#to-step-2').removeClass('disabled');
-//     } else {
-//         $('#to-step-2').addClass('disabled');
-//         $('#errorValidate').css("display", "block");
-//     }
-// }
-
-// function validateStep2() {
-//     let formNimKetua = $('#ketua_nim').val().length;
-//     let formNamaKetua = $('#ketua_nama').val().length;
-//     let formWaKetua = $('#ketua_wa').val().length;
-//     let formMemberData = $("div[id^='anggota-wrap-'").length
-//     let formMember = []
-//     let formMemberPass = false;
-
-//     for (i = 1; i <= formMemberData; i++) {
-//         let nim = $(`input[name="member[${i}][nim]"]`).val().length;
-//         let name = $(`input[name="member[${i}][name]"]`).val().length;
-
-//         if (nim >= 3 && name >= 6) {
-//             formMember[i - 1] = true
-//         } else {
-//             formMember[i - 1] = false
-//         }
-//     }
-
-//     if (formMember.length > 0 && formMember.indexOf(false) == -1) {
-//         formMemberPass = true;
-//     } else {
-//         formMemberPass = false;
-//     }
-
-//     if (formNimKetua > 3 && formNamaKetua >= 6 && formWaKetua >= 10 && formMemberPass) {
-//         $('#to-step-3').removeClass('disabled');
-//     } else {
-//         $('#to-step-3').addClass('disabled');
-//     }
-// }
 
 function validateStep3() {
     let formEmail = $('#third_email').val().length;
