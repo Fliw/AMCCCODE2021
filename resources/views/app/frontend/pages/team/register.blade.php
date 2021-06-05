@@ -28,7 +28,7 @@
         <div class="row">
           <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
             <div class="login-brand">
-              <img src="{{ asset('code2020/img/logo-384.png') }}" alt="logo" width="192">
+              <img src="{{ asset('code2020/img/loghi.png') }}" alt="logo" width="192">
             </div>
             @if(session()->has('info'))
               <div class="alert alert-primary">

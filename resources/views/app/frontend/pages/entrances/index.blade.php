@@ -15,7 +15,7 @@
         <div class="row">
           <div class="col-12 col-sm-8 offset-sm-2 col-xl-6 offset-xl-3">
             <div class="login-brand">
-              <img src="{{ asset('code2020/img/logo-384.png') }}" alt="logo" width="192">
+              <img src="{{ asset('code2020/img/loghi.png') }}" alt="logo" width="192">
             </div>
             <h4 style="text-align: center;">Akses Event</h4>
 
