@@ -58,7 +58,7 @@
                       
                       <p style="text-align: left">
                         Berikut adalah beberapa tips sebelum teman-teman mulai registrasi:<br/>
-                        1. CODE 2020 (untuk saat ini) adalah kompetisi yang hanya ditujukan untuk mahasiswa/i dari <strong>perguruan tinggi</strong> (negeri maupun swasta).
+                        1. CODE 2021 (untuk saat ini) adalah kompetisi yang hanya ditujukan untuk mahasiswa/i dari <strong>perguruan tinggi</strong> (negeri maupun swasta).
                         <br/>
                         2. Sudah menentukan kategori yang ingin diikuti? sudah membaca rulebooknya? pastikan teman-teman sudah yaa :)
                         kalau belum bisa mengaksesnya disini <a href="http://bit.ly/rulebookCODE2020" target="_blank"><strong>[ Link Rulebook ]</strong></a>.
